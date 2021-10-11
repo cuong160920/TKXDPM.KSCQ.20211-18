@@ -2,7 +2,7 @@
 
 ----------
 
-#Lab-00
+#Lab-00: Software	Requirement	Specification
 
 ## Tasks
 - Đặc tả Use Case
