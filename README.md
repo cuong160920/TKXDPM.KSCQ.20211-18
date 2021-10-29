@@ -10,10 +10,10 @@
 	+ Biểu đồ phân tích lớp
 
 ## Contribute
-- Nguyễn Văn Chiến: xây dựng biểu đồ tương tác cho use case 'Rent Bike'
-- Hoàng Hải Đăng: xây dựng biểu đồ tương tác cho use case 'View Bike in Station and/or View Bike Information'
-- Nguyễn Đào Duy Kiên: xây dựng biểu đồ tương tác cho use case 'Return Bike'
-- Nguyễn Mạnh Cường: xây dựng biểu đồ phân tích lớp cho cả 3 Use case trên
+- Nguyễn Văn Chiến: xây dựng biểu đồ tương tác, biểu đồ phân tích lớp cho use case 'Rent Bike'
+- Hoàng Hải Đăng: xây dựng biểu đồ tương tác, biểu đồ phân tích lớp  cho use case 'View Bike in Station and/or View Bike Information'
+- Nguyễn Đào Duy Kiên: xây dựng biểu đồ tương tác, biểu đồ phân tích lớp  cho use case 'Return Bike'
+- Nguyễn Mạnh Cường: tham gia xây dựng 3 biểu đồ phân tích lớp, biểu đồ phân tích lớp cho cả 3 Use case trên
 
 ## Revisions
 
