@@ -1,6 +1,19 @@
 # TKXDPM.KSCQ.20211-18
 ----------
+#Lab-02: Design Interfaces
 
+## Tasks
+- Thiết kế giao diện cho các màn hình và Interfaces
+
+## Contribute
+- Nguyễn Văn Chiến: thiết kế giao diện cho 2 màn hình: RentBikeForm, RentBikeScreen
+- Hoàng Hải Đăng: thiết kế giao diện cho 2 màn hình: ViewDockScreen, ViewBikeScreen
+- Nguyễn Đào Duy Kiên: thiết kế giao diện cho màn hình ReturnBikeScreen và Interface InterbankInterface
+- Nguyễn Mạnh Cường: thiết kế giao diện cho 2 màn hình: InvoiceScreen, BarCodeScreen
+
+## Revisions
+
+----------
 #Lab-01: Interaction Diagrams + Analysis Diagrams
 
 ## Tasks
