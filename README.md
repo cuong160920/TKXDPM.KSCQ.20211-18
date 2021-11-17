@@ -6,10 +6,10 @@
 - Thiết kế giao diện cho các màn hình và Interfaces
 
 ## Contribute
-- Nguyễn Văn Chiến: thiết kế giao diện cho 2 màn hình: BarCodeScreen, RentBikeForm, RentBikeScreen, InvoiceScreen, PaymentScreen
-- Hoàng Hải Đăng: thiết kế giao diện cho 2 màn hình: ViewDockScreen, ViewBikeScreen
-- Nguyễn Đào Duy Kiên: thiết kế giao diện cho màn hình ReturnBikeScreen, TransactionResult và Interface InterbankInterface
-- Nguyễn Mạnh Cường: thiết kế giao diện cho 2 màn hình: SplashScreen, HomeScreen
+- Nguyễn Văn Chiến: thiết kế giao diện cho các màn hình: BarCodeScreen, RentBikeForm, RentBikeScreen, InvoiceScreen, PaymentScreen
+- Hoàng Hải Đăng: thiết kế giao diện cho các màn hình: ViewDockScreen, ViewBikeScreen
+- Nguyễn Đào Duy Kiên: thiết kế giao diện cho các màn hình ReturnBikeScreen, TransactionResult và Interface InterbankInterface
+- Nguyễn Mạnh Cường: thiết kế giao diện cho các màn hình: SplashScreen, HomeScreen
 
 ## Revisions
 
