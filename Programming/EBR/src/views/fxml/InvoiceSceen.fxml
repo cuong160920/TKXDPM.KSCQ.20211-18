@@ -34,6 +34,7 @@
                     <rowConstraints>
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
@@ -58,22 +59,32 @@
                         <Font name="Arial Bold Italic" size="18.0" />
                      </font>
                   </Text>
-                  <Text opacity="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="DEPOSIT" GridPane.rowIndex="2">
+                  <Text opacity="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="DEPOSIT" GridPane.rowIndex="3">
                      <font>
                         <Font name="Arial" size="18.0" />
                      </font>
                   </Text>
-                  <Text fx:id="deposit" opacity="0.9" strokeType="OUTSIDE" strokeWidth="0.0" text="1,000,000 VND" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Text fx:id="deposit" opacity="0.9" strokeType="OUTSIDE" strokeWidth="0.0" text="1,000,000 VND" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
                         <Font name="Arial Bold Italic" size="18.0" />
                      </font>
                   </Text>
-                  <Text opacity="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="CHARGE" GridPane.rowIndex="3">
+                  <Text opacity="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="CHARGE" GridPane.rowIndex="4">
                      <font>
                         <Font name="Arial" size="18.0" />
                      </font>
                   </Text>
-                  <Text fx:id="rentalFee" opacity="0.9" strokeType="OUTSIDE" strokeWidth="0.0" text="25,000 VND/h" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Text fx:id="rentalFee" opacity="0.9" strokeType="OUTSIDE" strokeWidth="0.0" text="25,000 VND/h" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Arial Bold Italic" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text opacity="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="LICENSE PLACE" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="bikeType1" opacity="0.9" strokeType="OUTSIDE" strokeWidth="0.0" text="NULL" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font name="Arial Bold Italic" size="18.0" />
                      </font>
