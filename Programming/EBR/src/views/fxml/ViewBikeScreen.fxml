@@ -84,7 +84,7 @@
                   </GridPane>
                   <ImageView fx:id="bikeImage" fitHeight="300.0" fitWidth="400.0" layoutX="22.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
                       <image>
-                          <Image url="@../../../assets/images/bikes/asamaMTB2604.jpg" />
+                          <Image url="@../../../assets/images/bike/xe-dap-dia-hinh-nu-1.jpg" />
                       </image>
                   </ImageView>
                   <Line endX="353.0" layoutX="514.0" layoutY="429.0" startX="-460.0" />
@@ -113,17 +113,17 @@
                <children>
                   <ImageView fx:id="saddleImg" fitHeight="44.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../assets/images/icons/yenxe1.png" />
+                        <Image url="@../../../assets/images/icons/pedals_icon.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="pedalsImg" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                      <image>
-                        <Image url="@../../../assets/images/icons/pedals_icon1.png" />
+                        <Image url="@../../../assets/images/icons/rear_seat_icon.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="rearSeatImg" fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
                      <image>
-                        <Image url="@../../../assets/images/icons/rear_seat_icon3.png" />
+                        <Image url="@../../../assets/images/icons/saddle_icon.png" />
                      </image>
                   </ImageView>
                   <Text fx:id="saddleNum" opacity="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="1" GridPane.columnIndex="1">
