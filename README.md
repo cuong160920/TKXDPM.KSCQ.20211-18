@@ -1,5 +1,19 @@
 # TKXDPM.KSCQ.20211-18
 ----------
+#Lab-03: Design Classes and Data Modeling
+
+## Tasks
+- Thiết kế lớp và mô hình hóa dữ liệu
+
+## Contribute
+- Nguyễn Văn Chiến: Design Class Model
+- Hoàng Hải Đăng: Design Class Controller
+- Nguyễn Đào Duy Kiên: Design Class View
+- Nguyễn Mạnh Cường: Data Modeling
+
+## Revisions
+
+----------
 #Lab-02: Design Interfaces
 
 ## Tasks
