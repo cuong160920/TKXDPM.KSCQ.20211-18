@@ -6,9 +6,9 @@
 - Thiết kế lớp và mô hình hóa dữ liệu
 
 ## Contribute
-- Nguyễn Văn Chiến: Design Class Model
+- Nguyễn Văn Chiến: Design Class Model, Utils
 - Hoàng Hải Đăng: Design Class Controller
-- Nguyễn Đào Duy Kiên: Design Class View
+- Nguyễn Đào Duy Kiên: Design Class View, InterbankSubsystem 
 - Nguyễn Mạnh Cường: Data Modeling
 
 ## Revisions
