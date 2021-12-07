@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="253.0" prefWidth="324.0" style="-fx-background-radius: 20; -fx-border-color: E3F91D; -fx-border-width: 5; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="87.0" fitWidth="107.0" layoutX="117.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/images/Alert.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="86.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ERROR MESSAGE" wrappingWidth="166.6708984375">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
