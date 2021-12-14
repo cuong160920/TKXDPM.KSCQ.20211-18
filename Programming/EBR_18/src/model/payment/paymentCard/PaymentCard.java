@@ -1,4 +1,4 @@
-package payment.paymentCard;
+package model.payment.paymentCard;
 
 public class PaymentCard {
 }

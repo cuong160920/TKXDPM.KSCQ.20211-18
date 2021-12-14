@@ -1,2 +1,0 @@
-module EBR_18 {
-}

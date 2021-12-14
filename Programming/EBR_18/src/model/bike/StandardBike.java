@@ -1,4 +1,4 @@
-package bike;
+package model.bike;
 
 public class StandardBike {
 }

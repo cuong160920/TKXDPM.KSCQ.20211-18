@@ -1,4 +1,4 @@
-package payment.paymentCard.creditCard;
+package model.payment.paymentCard.creditCard;
 
 public class CreditCardManager {
 }

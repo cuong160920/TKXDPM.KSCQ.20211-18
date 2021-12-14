@@ -1,4 +1,4 @@
-package invoice;
+package model.invoice;
 
 public class InvoiceManager {
 }

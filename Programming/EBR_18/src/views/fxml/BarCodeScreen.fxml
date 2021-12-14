@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="339.0" prefWidth="400.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #36C0AA; -fx-border-width: 5; -fx-border-radius: 5; -fx-background-radius: 5;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+          <TextField fx:id="barcodeInput" layoutX="57.0" layoutY="194.0" prefHeight="31.0" prefWidth="294.0" style="-fx-border-color: #36C0AA; -fx-border-width: 1; -fx-border-radius: 10; -fx-background-radius: 10;">
+            <font>
+                <Font size="15.0" />
+            </font>
+          </TextField>
+          <Button fx:id="continueBtn" layoutX="134.0" layoutY="262.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="139.0" style="-fx-background-color: #36C0AA; -fx-border-radius: 6; -fx-background-radius: 6;" text="ENTER" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+          </Button>
+      <Text fx:id="errorText" fill="RED" layoutX="191.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" visible="false" wrappingWidth="400.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="175.0">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="110.0" fitWidth="200.0" layoutX="122.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/images/ECOBIKE_logo_2.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="104.0" layoutY="122.0" prefHeight="64.0" prefWidth="200.0">
+         <children>
+            <Text fill="#0ec36e" layoutX="42.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BARCODE" wrappingWidth="181.6708984375">
+               <font>
+                  <Font name="Segoe UI Bold Italic" size="25.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

@@ -1,4 +1,4 @@
-package payment.transaction;
+package model.payment.transaction;
 
 public class PaymentTransaction {
 }
