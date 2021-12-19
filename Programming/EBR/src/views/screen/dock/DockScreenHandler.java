@@ -21,15 +21,15 @@ import java.util.ArrayList;
 /**
  * Handler for Dock View Screen
  *
- * @author mHoang
+ * @author duykien
  * <p>
- * created_at: 6/12/2020
+ * creted at: 15/12/2021
  * <p>
  * project name: EBR
  * <p>
  * teacher's name: Dr. Nguyen Thi Thu Trang
  * <p>
- * class name: TT.CNTT ICT 02 K62
+ * class name: CNTT02-K63
  * <p>
  * helpers: teacher's teaching assistants
  */

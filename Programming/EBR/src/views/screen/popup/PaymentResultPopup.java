@@ -15,7 +15,21 @@ import views.screen.BaseScreenHandlerWithTransactionPopup;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+/**
+ * class for Payment Result Popup
+ *
+ * @author duykien
+ * <p>
+ * creted at: 15/12/2021
+ * <p>
+ * project name: EBR
+ * <p>
+ * teacher's name: Dr. Nguyen Thi Thu Trang
+ * <p>
+ * class name: CNTT02-K63
+ * <p>
+ * helpers: teacher's teaching assistants
+ */
 public class PaymentResultPopup extends Popup implements Initializable {
 
     @FXML

@@ -11,15 +11,15 @@ import java.io.IOException;
 /**
  * Base class for FXML handler
  *
- * @author mhoang99
+ * @author duykien
  * <p>
- * creted at: 20/11/2020
+ * creted at: 15/12/2021
  * <p>
  * project name: EBR
  * <p>
  * teacher's name: Dr. Nguyen Thi Thu Trang
  * <p>
- * class name: TT.CNTT ICT 02 - K62
+ * class name: CNTT02-K63
  */
 public class FXMLScreenHandler {
 

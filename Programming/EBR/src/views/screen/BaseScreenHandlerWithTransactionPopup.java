@@ -7,15 +7,15 @@ import java.io.IOException;
 /**
  * base screen handler for transaction result popup
  *
- * @author mhong99
+ * @author duykien
  * <p>
- * creted at: 20/12/2020
+ * creted at: 15/12/2021
  * <p>
  * project name: EBR
  * <p>
  * teacher's name: Dr. Nguyen Thi Thu Trang
  * <p>
- * class name: TT.CNTT ICT 02 - K62
+ * class name: CNTT02-K63
  */
 public class BaseScreenHandlerWithTransactionPopup extends BaseScreenHandler {
 

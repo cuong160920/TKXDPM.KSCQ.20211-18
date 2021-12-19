@@ -8,15 +8,15 @@ import java.util.ResourceBundle;
 /**
  * blank screen init for later screens
  *
- * @author Nguyen Thai An
+ * @author duykien
  * <p>
- * creted at: 04/12/2020
+ * creted at: 15/12/2021
  * <p>
  * project name: EBR
  * <p>
  * teacher's name: Dr. Nguyen Thi Thu Trang
  * <p>
- * class name: TT.CNTT ICT 02 - K62
+ * class name: CNTT02-K63
  */
 public class BlankHandler implements Initializable {
     @Override
