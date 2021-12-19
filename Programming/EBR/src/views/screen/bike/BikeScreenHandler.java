@@ -104,7 +104,7 @@ public class BikeScreenHandler extends BaseScreenHandler implements Initializabl
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        rentNowButton.setOnMouseClicked(e -> {
+		rentNowButton.setOnMouseClicked(e -> {
             System.out.println("Button clicked");
             try {
                 PaymentScreenController paymentScreenController = new PaymentScreenController(bike);

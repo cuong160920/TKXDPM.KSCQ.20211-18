@@ -6,17 +6,17 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 
 /**
- * class for ...
+ * class for Card Form Screen
  *
- * @author mHoang
+ * @author HHDang
  * <p>
- * created_at: 25/12/2020
+ * created_at: 15/12/2021
  * <p>
  * project name: EBR
  * <p>
  * teacher's name: Dr. Nguyen Thi Thu Trang
  * <p>
- * class name: TT.CNTT ICT 02 K62
+ * class name: KSCQ.CNTT 03 K63
  * <p>
  * helpers: teacher's teaching assistants
  */

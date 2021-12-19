@@ -10,19 +10,20 @@ import model.invoice.InvoiceManager;
 import java.util.ArrayList;
 
 /**
- * controller for returning dock selection
+ * class for Return dock selection
  *
- * @author khang
+ * @author HHDang
  * <p>
- * creted at: 20/12/2020
+ * created_at: 15/12/2021
  * <p>
  * project name: EBR
  * <p>
  * teacher's name: Dr. Nguyen Thi Thu Trang
  * <p>
- * class name: TT.CNTT ICT 02 - K62
+ * class name: KSCQ.CNTT 03 K63
+ * <p>
+ * helpers: teacher's teaching assistants
  */
-
 public class ReturningDockSelectionController extends BaseController{
     /**
      * This method is used to get dock list

@@ -2,20 +2,20 @@ package controller;
 
 import model.bike.Bike;
 import model.bike.BikeManager;
-
 import java.util.ArrayList;
+
 /**
- * Controller for dock screen
+ * class for Dock Screen
  *
- * @author Nguyen Thai An
+ * @author HHDang
  * <p>
- * creted at: 20/12/2020
+ * created_at: 15/12/2021
  * <p>
  * project name: EBR
  * <p>
  * teacher's name: Dr. Nguyen Thi Thu Trang
  * <p>
- * class name: TT.CNTT ICT 02 - K62
+ * class name: KSCQ.CNTT 03 K63
  * <p>
  * helpers: teacher's teaching assistants
  */

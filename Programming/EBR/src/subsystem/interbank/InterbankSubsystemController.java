@@ -12,8 +12,8 @@ import java.util.Map;
 
 public class InterbankSubsystemController {
 
-    private static final String PUBLIC_KEY = "BDcKeK6XjQg=";
-    private static final String SECRET_KEY = "BBbFAE8bdPY=";
+    private static final String PUBLIC_KEY = "B8LYoNya3IA=";
+    private static final String SECRET_KEY = "BmHXoZccpho=";
     private static final String PAY_COMMAND = "pay";
     private static final String REFUND_COMMAND = "refund";
     private static final String VERSION = "1.0.1";

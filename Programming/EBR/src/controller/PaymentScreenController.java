@@ -18,15 +18,15 @@ import java.util.Map;
  * Controller to execute all logic required for taking payment method
  * and start a new renting session
  *
- * @author Nguyen Thai An
+ * @author HHDang
  * <p>
- * creted at: 20/12/2020
+ * created_at: 15/12/2021
  * <p>
  * project name: EBR
  * <p>
  * teacher's name: Dr. Nguyen Thi Thu Trang
  * <p>
- * class name: TT.CNTT ICT 02 - K62
+ * class name: KSCQ.CNTT 03 K63
  * <p>
  * helpers: teacher's teaching assistants
  */

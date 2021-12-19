@@ -4,17 +4,19 @@ import model.invoice.Invoice;
 import model.session.Session;
 
 /**
- * description
+ * abstract class for calculate fee
  *
- * @author Nguyen Thai An
+ * @author HHDang
  * <p>
- * creted at: 25/12/2020
+ * created_at: 15/12/2021
  * <p>
  * project name: EBR
  * <p>
  * teacher's name: Dr. Nguyen Thi Thu Trang
  * <p>
- * class name: TT.CNTT ICT 02 - K62
+ * class name: KSCQ.CNTT 03 K63
+ * <p>
+ * helpers: teacher's teaching assistants
  */
 public abstract class RentingFeeCalculator {
 

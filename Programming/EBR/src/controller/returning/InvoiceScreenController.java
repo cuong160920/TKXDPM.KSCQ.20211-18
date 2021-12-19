@@ -16,18 +16,19 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+
 /**
- * class for controller of the invoice screen
+ * class for Invoice Screen
  *
- * @author khang
+ * @author HHDang
  * <p>
- * created_at: 4/12/2020
+ * created_at: 15/12/2021
  * <p>
  * project name: EBR
  * <p>
  * teacher's name: Dr. Nguyen Thi Thu Trang
  * <p>
- * class name: TT.CNTT ICT 02 K62
+ * class name: KSCQ.CNTT 03 K63
  * <p>
  * helpers: teacher's teaching assistants
  */
@@ -47,7 +48,7 @@ public class InvoiceScreenController extends BaseController {
      *
      * @param invoice invoice to be computed fee
      * @return totalCharge - the amount of money that customer has to pay until the session end
-     * @author khang
+     * @author HHDang
      */
 
     public int calculateTotalFees(Invoice invoice){
@@ -70,7 +71,7 @@ public class InvoiceScreenController extends BaseController {
      *
      * @param invoice invoice to be computed fee
      * @return returned - the amount of money that EBR has to return to user
-     * @author khang
+     * @author HHDang
      */
 
 

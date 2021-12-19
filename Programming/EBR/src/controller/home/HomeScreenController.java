@@ -7,17 +7,17 @@ import model.dock.DockManager;
 import java.util.ArrayList;
 
 /**
- * class for controller of the home screen
+ * class for Home Screen
  *
- * @author mHoang
+ * @author HHDang
  * <p>
- * created_at: 4/12/2020
+ * created_at: 15/12/2021
  * <p>
  * project name: EBR
  * <p>
  * teacher's name: Dr. Nguyen Thi Thu Trang
  * <p>
- * class name: TT.CNTT ICT 02 K62
+ * class name: KSCQ.CNTT 03 K63
  * <p>
  * helpers: teacher's teaching assistants
  */
