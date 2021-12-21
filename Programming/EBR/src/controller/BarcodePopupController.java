@@ -33,7 +33,7 @@ public class BarcodePopupController extends BaseController {
      */
 
     public int validateBarcodeInput(String barcode) throws InvalidBarcodeFormatException, NullBarcodeException {
-        try {
+    	try {
             if (barcode == null) throw new NullBarcodeException();
             return Integer.parseInt(barcode);
         } catch (NumberFormatException e) {

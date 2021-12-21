@@ -115,7 +115,7 @@ public class Utils {
      */
     public static long minusLocalDateTime(LocalDateTime before, LocalDateTime after) {
         Duration duration = Duration.between(before, after);
-		return duration.toSeconds();
+		return duration.toMinutes();
     }
 
 }
