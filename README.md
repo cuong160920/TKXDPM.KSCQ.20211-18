@@ -1,5 +1,19 @@
 # TKXDPM.KSCQ.20211-18
 ----------
+#Lab-04: Coding and Testing
+
+## Tasks
+- Xây dựng chương trình và kiểm thử
+
+## Contribute
+- Nguyễn Văn Chiến: Thiết kế 1 phần Views, Controller, Model
+- Hoàng Hải Đăng:  Thiết kế 1 phần Views, Controller, Model
+- Nguyễn Đào Duy Kiên:  Thiết kế 1 phần Views, Controller, Model
+- Nguyễn Mạnh Cường: Testing, thiết kế 1 phần Model
+
+## Revisions
+
+----------
 #Lab-03: Design Classes and Data Modeling
 
 ## Tasks
