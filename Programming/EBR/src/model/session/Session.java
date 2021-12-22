@@ -11,15 +11,15 @@ import java.util.HashMap;
 /**
  * class for the model Session
  *
- * @author mHoang, Nguyen Thai An
+ * @author Nguyen Van Chien
  * <p>
- * created_at: 4/12/2020
+ * created_at: 22/12/2021
  * <p>
  * project name: EBR
  * <p>
  * teacher's name: Dr. Nguyen Thi Thu Trang
  * <p>
- * class name: TT.CNTT ICT 02 K62
+ * class name: KSCQ.CNTT 01 K63
  * <p>
  * helpers: teacher's teaching assistants
  */

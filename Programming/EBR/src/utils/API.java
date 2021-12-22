@@ -12,15 +12,17 @@ import java.util.logging.Logger;
 /**
  * Class for calling http request
  *
- * @author Nguyen Thai An, hieud
+ * @author Nguyen Van Chien
  * <p>
- * creted at: 25/11/2020
+ * created_at: 22/12/2021
  * <p>
  * project name: EBR
  * <p>
  * teacher's name: Dr. Nguyen Thi Thu Trang
  * <p>
- * class name: TT.CNTT ICT 02 - K62
+ * class name: KSCQ.CNTT 01 K63
+ * <p>
+ * helpers: teacher's teaching assistants
  */
 public class API {
 

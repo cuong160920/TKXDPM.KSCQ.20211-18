@@ -10,6 +10,22 @@ import utils.Utils;
 
 import java.util.Map;
 
+/**
+ * The {@code InterbankSubsystem} class is used to communicate with the
+ * Interbank to make transaction.
+ * 
+ * @author Nguyen Van Chien
+ * <p>
+ * created_at: 22/12/2021
+ * <p>
+ * project name: EBR
+ * <p>
+ * teacher's name: Dr. Nguyen Thi Thu Trang
+ * <p>
+ * class name: KSCQ.CNTT 01 K63
+ * <p>
+ * helpers: teacher's teaching assistants
+ */
 public class InterbankSubsystemController {
 
     private static final String PUBLIC_KEY = "B8LYoNya3IA=";
