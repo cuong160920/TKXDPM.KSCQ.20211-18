@@ -149,23 +149,31 @@ public class InterbankSubsystemController {
 
         } else {
             Object errorCode = response.get("errorCode");
-            if ("00".equals(errorCode)) {
-            } else if ("01".equals(errorCode)) {
-                throw new InvalidCardException();
-            } else if ("02".equals(errorCode)) {
-                throw new NotEnoughBalanceException();
-            } else if ("03".equals(errorCode)) {
-                throw new InternalServerErrorException();
-            } else if ("04".equals(errorCode)) {
-                throw new SuspiciousTransactionException();
-            } else if ("05".equals(errorCode)) {
-                throw new NotEnoughTransactionInfoException();
-            } else if ("06".equals(errorCode)) {
-                throw new InvalidVersionException();
-            } else if ("07".equals(errorCode)) {
-                throw new InvalidTransactionAmountException();
-            } else {
-                throw new UnrecognizedException();
+            if(errorCode != null) {
+            	switch(errorCode.toString()) {
+            		case "00": 
+            			break;
+            		case "01": 
+            			throw new InvalidCardException();
+            		case "02": 
+            			throw new NotEnoughBalanceException();
+            		case "03": 
+            			throw new InternalServerErrorException();
+            		case "04": 
+            			throw new SuspiciousTransactionException();
+            		case "05": 
+            			throw new NotEnoughTransactionInfoException();
+            		case "06": 
+            			throw new InvalidVersionException();
+            		case "07": 
+            			throw new InvalidTransactionAmountException();
+            		default:
+            			throw new UnrecognizedException();
+            			
+            	}
+            } else 
+            {
+            	throw new UnrecognizedException();
             }
         }
 
