@@ -51,6 +51,7 @@ public class BaseScreenHandlerWithBarcodePopup extends BaseScreenHandler {
             bikeScreenHandler.setHomeScreenHandler(this.homeScreenHandler);
             bikeScreenHandler.setPreviousScreen(this);
             bikeScreenHandler.setScreenTitle(bikeScreenHandler.getScreenTitle());
+            bikeScreenHandler.toggleRentNowButton(true);
             bikeScreenHandler.show();
         } catch (IOException ioException) {
             ioException.printStackTrace();

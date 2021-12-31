@@ -1,12 +1,18 @@
 package utils;
 
 import java.io.*;
+import java.lang.invoke.MethodHandles;
+import java.lang.invoke.VarHandle;
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.net.HttpURLConnection;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Set;
 import java.util.logging.Logger;
 
 /**
@@ -128,5 +134,4 @@ public class API {
         if (!connection.getRequestMethod().equals(method))
             throw new IllegalStateException("Failed to set the request method to " + method);
     }
-
 }

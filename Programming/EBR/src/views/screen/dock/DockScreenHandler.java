@@ -179,6 +179,7 @@ public class DockScreenHandler extends BaseScreenHandlerWithBarcodePopup {
             bikeScreenHandler.setScreenTitle(bikeScreenHandler.getScreenTitle());
             bikeScreenHandler.setPreviousScreen(this);
             bikeScreenHandler.setHomeScreenHandler(homeScreenHandler);
+            bikeScreenHandler.toggleRentNowButton(false);
             bikeScreenHandler.show();
         } catch (IOException e1) {
             e1.printStackTrace();

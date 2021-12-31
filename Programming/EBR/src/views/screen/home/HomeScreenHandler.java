@@ -4,6 +4,7 @@ import controller.DockScreenController;
 import controller.HomeScreenController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -57,6 +58,9 @@ public class HomeScreenHandler extends BaseScreenHandlerWithBarcodePopup impleme
 
     @FXML
     private VBox vboxDockList2;
+    
+    @FXML
+    private Button searchBtn;
 
     private ArrayList<Dock> dockList;
 
@@ -67,6 +71,9 @@ public class HomeScreenHandler extends BaseScreenHandlerWithBarcodePopup impleme
         super.setBController(homeScreenController);
         dockList = this.getBController().getDockList();
         navbar.getChildren().add(new NavBarHandler(this, true, false, false).getContent());
+        searchBtn.setOnMouseClicked(e -> {
+        	searchImgListener(e);
+        });
     }
 
     @Override

@@ -29,20 +29,20 @@ public class Path {
     public static final String PARKING_ICON = "assets/images/icons/parking_icon.png";
     public static final String LOGO_ICON = "assets/images/LOGO.png";
     public static final String LOGO_R_ICON = "assets/images/LOGO_R.png";
-    public static final String BIG_LOGO_ICON = "assets/images/BigLOGO.png";
+    public static final String BIG_LOGO_ICON = "assets/images/ECOBIKE_logo_2.png";
     public static final String BACK_NAV_ICON = "assets/images/backButton.png";
     public static final String CANCEL_BUTTON_ICON = "assets/images/rotate-ccw.png";
     public static final String SEARCH_ICON = "assets/images/icons/search_icon.png";
-    public static final String SADDLE_ICON = "assets/images/icons/saddle_icon.png";
-    public static final String PEDALS_ICON = "assets/images/icons/pedals_icon.png";
-    public static final String REAR_SEAT_ICON = "assets/images/icons/rear_seat_icon.png";
+    public static final String SADDLE_ICON = "assets/images/saddle_icon.png";
+    public static final String PEDALS_ICON = "assets/images/pedals_icon.png";
+    public static final String REAR_SEAT_ICON = "assets/images/rear_seat_icon.png";
     public static final String X_ICON = "assets/images/icons/X_icon.png";
 
     // fxmls path
     public static final String BLANK_SCREEN_PATH = "/views/fxml/blank.fxml";
     public static final String INVOICE_SCREEN_PATH = "/views/fxml/invoice.fxml";
     public static final String SESSION_SCREEN_PATH = "/views/fxml/session.fxml";
-    public static final String SPLASH_SCREEN_PATH = "/views/fxml/splash.fxml";
+    public static final String SPLASH_SCREEN_PATH = "/views/fxml/splash1.fxml";
     public static final String HOME_PATH = "/views/fxml/home.fxml";
     public static final String POPUP_PATH = "/views/fxml/barcode_popup.fxml";
     public static final String DOCK_LIST_ITEM_PATH = "/views/fxml/dock_list_item.fxml";

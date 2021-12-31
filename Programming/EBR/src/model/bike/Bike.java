@@ -29,7 +29,7 @@ public class Bike {
     protected int deposit;
     protected int charge = 10000;
     protected String imageURL;
-
+    protected String licensePlate;
     public Bike() { }
 
     /**
@@ -79,7 +79,6 @@ public class Bike {
      * @param dock chosen dock
      */
     public void putBikeInDock(Dock dock) {
-        dock.addBike(this);
         BikeManager.getInstance().updateDockOfBike(this, dock.getId());
     }
 
@@ -131,7 +130,15 @@ public class Bike {
         return "Bike";
     }
 
-    @Override
+    public String getLicensePlate() {
+		return licensePlate;
+	}
+
+	public void setLicensePlate(String licensePlate) {
+		this.licensePlate = licensePlate;
+	}
+
+	@Override
     public boolean equals(Object obj) {
         if (obj instanceof Bike) {
             Bike bike = (Bike) obj;

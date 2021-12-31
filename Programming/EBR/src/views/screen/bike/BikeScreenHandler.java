@@ -83,6 +83,9 @@ public class BikeScreenHandler extends BaseScreenHandler implements Initializabl
 
     @FXML
     private Pane navbar;
+    
+    @FXML
+    private Text licensePlate;
 
     private Bike bike;
 
@@ -132,6 +135,7 @@ public class BikeScreenHandler extends BaseScreenHandler implements Initializabl
             pedalsNum.setText(bike.getPairOfPedals() + "");
             saddleNum.setText(bike.getSaddle() + "");
             rearSeatNum.setText(bike.getRearSeat() + "");
+            licensePlate.setText(bike.getLicensePlate());
             if (bike instanceof StandardElectricalBike) {
                 bikeBattery.setText(((StandardElectricalBike) bike).getBattery() + "%");
                 bikeUsage.setText(((StandardElectricalBike) bike).getTimeLeft() + " minutes");
@@ -151,5 +155,9 @@ public class BikeScreenHandler extends BaseScreenHandler implements Initializabl
         setImage(rearSeatImg, Path.REAR_SEAT_ICON);
         setImage(batteryImg, Path.BATTERY_ICON);
         setImage(bikeImage, bike.getImageURL());
+    }
+    
+    public void toggleRentNowButton(boolean flag) {
+    	this.rentNowButton.setVisible(flag);
     }
 }

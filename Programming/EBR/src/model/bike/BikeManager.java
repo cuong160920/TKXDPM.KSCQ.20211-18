@@ -146,6 +146,7 @@ public class BikeManager {
                         break;
                 }
                 if (bike != null) {
+                	bike.setLicensePlate(resultSet.getString("license_plate"));
                     bikeListOfDock.add(bike);
                 }
             }
@@ -278,7 +279,7 @@ public class BikeManager {
                     + "WHERE id = ?::uuid";
         }
 
-        // Update
+        // Update dock id for bike in database
         try (Connection conn = EBRDB.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(SQL,
                      Statement.RETURN_GENERATED_KEYS)) {
@@ -294,7 +295,7 @@ public class BikeManager {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-
+        // Update bike to dock
         if (dockId != null && !dockId.equals("")) {
             DockManager.getInstance().getDockById(dockId).addBike(bike);
         }

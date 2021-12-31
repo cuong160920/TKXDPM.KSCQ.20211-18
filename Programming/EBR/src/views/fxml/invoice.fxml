@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
     <children>
       <AnchorPane layoutX="-14.0" layoutY="60.0" prefHeight="706.0" prefWidth="1366.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
          <children>
@@ -106,7 +117,7 @@
                       <Image url="@../../../assets/images/bikes/StandardBike.png" />
                   </image>
                   </ImageView>
-                <Text fill="#8c36c0" layoutX="101.0" layoutY="156.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="INVOICE" textAlignment="CENTER" AnchorPane.leftAnchor="101.0" AnchorPane.topAnchor="112.546875">
+                <Text fill="#36c0aa" layoutX="101.0" layoutY="156.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="INVOICE" textAlignment="CENTER" AnchorPane.leftAnchor="101.0" AnchorPane.topAnchor="112.546875">
                <font>
                   <Font name="Arial Bold" size="48.0" />
                </font>
@@ -196,24 +207,24 @@
                          <Text fx:id="errorText" fill="RED" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ERROR" textAlignment="CENTER" visible="false" wrappingWidth="396.0" />
                        </children>
                    </Pane>
-                  <Text fill="#8c36c0" layoutX="55.0" layoutY="107.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="PAYMENT CARD" textAlignment="CENTER" wrappingWidth="300.0">
+                  <Text fill="#36c0aa" layoutX="55.0" layoutY="107.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="PAYMENT CARD" textAlignment="CENTER" wrappingWidth="300.0">
                      <font>
                         <Font name="Arial Bold" size="48.0" />
                      </font>
                   </Text>
                </children>
             </Pane>
-                <Button fx:id="confirmButton" alignment="CENTER" layoutX="531.0" layoutY="613.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="304.0" style="-fx-background-color: #8c36c0; -fx-background-radius: 6; -fx-cursor: hand;" text="CONFIRM" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="531.0" AnchorPane.rightAnchor="531.0">
+                <Button fx:id="confirmButton" alignment="CENTER" layoutX="531.0" layoutY="613.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="56.0" prefWidth="304.0" style="-fx-background-color: #36C0AA; -fx-background-radius: 6; -fx-cursor: hand;" text="CONFIRM" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="531.0" AnchorPane.rightAnchor="531.0">
                <font>
                   <Font name="Arial Bold" size="24.0" />
                </font>
                 </Button>
             <Line endX="160.9182586669922" endY="453.0" layoutX="939.0" layoutY="215.0" startX="160.91897583007812" startY="-178.0" stroke="#909090" AnchorPane.rightAnchor="428.16668701171875" />
 
-             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8c36c0" height="284.0" layoutX="-27.0" layoutY="454.0" stroke="#fae715" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="5.0" width="434.0" AnchorPane.leftAnchor="-27.0" />
+             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#36c0aa" height="284.0" layoutX="-27.0" layoutY="454.0" stroke="#fae715" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="5.0" width="434.0" AnchorPane.leftAnchor="-27.0" />
          </children>
       </AnchorPane>
-        <Pane fx:id="navbar" prefHeight="60.0" prefWidth="1366.0" style="-fx-background-color: #8c36c0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Pane fx:id="navbar" prefHeight="60.0" prefWidth="1366.0" style="-fx-background-color: #36C0AA;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <effect>
                 <DropShadow />
             </effect>
