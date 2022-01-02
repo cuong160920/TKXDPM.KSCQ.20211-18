@@ -12,14 +12,14 @@ import java.io.IOException;
  * Base class for FXML handler
  *
  * @author duykien
- * <p>
- * creted at: 15/12/2021
- * <p>
- * project name: EBR
- * <p>
- * teacher's name: Dr. Nguyen Thi Thu Trang
- * <p>
- * class name: CNTT02-K63
+ *         <p>
+ *         creted at: 15/12/2021
+ *         <p>
+ *         project name: EBR
+ *         <p>
+ *         teacher's name: Dr. Nguyen Thi Thu Trang
+ *         <p>
+ *         class name: CNTT02-K63
  */
 public class FXMLScreenHandler {
 
@@ -28,6 +28,7 @@ public class FXMLScreenHandler {
 
 	/**
 	 * Constructor
+	 * 
 	 * @param screenPath .fxml path
 	 * @throws IOException IO error
 	 */
@@ -40,6 +41,7 @@ public class FXMLScreenHandler {
 
 	/**
 	 * get root anchor pane
+	 * 
 	 * @return {@link AnchorPane anchorPane}
 	 */
 	public AnchorPane getContent() {
@@ -48,6 +50,7 @@ public class FXMLScreenHandler {
 
 	/**
 	 * get loader
+	 * 
 	 * @return {@link FXMLLoader FXMLLoader}
 	 */
 	public FXMLLoader getLoader() {
@@ -56,10 +59,11 @@ public class FXMLScreenHandler {
 
 	/**
 	 * set image from path
-	 * @param imv Image Holder on FXML
+	 * 
+	 * @param imv  Image Holder on FXML
 	 * @param path URI to image
 	 */
-	public void setImage(ImageView imv, String path){
+	public void setImage(ImageView imv, String path) {
 		File file = new File(path);
 		Image img = new Image(file.toURI().toString());
 		imv.setImage(img);

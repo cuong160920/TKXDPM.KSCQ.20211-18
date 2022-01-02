@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * This class is the base controller for our AIMS project
- * @author nguyenlm
+ * @author HHDang
  */
 public class BaseController {
 }

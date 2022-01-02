@@ -13,89 +13,93 @@ import views.screen.popup.BarcodePopup;
 import java.io.IOException;
 
 /**
- * class for ...
  *
  * @author duykien
- * <p>
- * creted at: 15/12/2021
- * <p>
- * project name: EBR
- * <p>
- * teacher's name: Dr. Nguyen Thi Thu Trang
- * <p>
- * class name: CNTT02-K63
- * <p>
- * helpers: teacher's teaching assistants
+ *         <p>
+ *         creted at: 15/12/2021
+ *         <p>
+ *         project name: EBR
+ *         <p>
+ *         teacher's name: Dr. Nguyen Thi Thu Trang
+ *         <p>
+ *         class name: CNTT02-K63
+ *         <p>
+ *         helpers: teacher's teaching assistants
  */
 public class NavBarHandler extends FXMLScreenHandler {
-    @FXML
-    ImageView logo;
+	@FXML
+	ImageView logo;
 
-    @FXML
-    ImageView back;
+	@FXML
+	ImageView back;
 
-    @FXML
-    Button barcodeButton;
+	@FXML
+	Button barcodeButton;
 
-    private BaseScreenHandler parentScreenHandler;
+	private BaseScreenHandler parentScreenHandler;
 
-    /**
-     * Constructor for the nav bar
-     * @param screenHandler responsible handler
-     * @param buttonVisibility true/false to show/hide optional button
-     * @param backVisibility show/hide back button
-     * @param homeEnable show/hide home button
-     * @throws IOException IO errors
-     */
-    public NavBarHandler(BaseScreenHandler screenHandler, boolean buttonVisibility,  boolean backVisibility,  boolean homeEnable) throws IOException {
-        super(Path.NAVBAR_PATH);
-        this.parentScreenHandler = screenHandler;
-        setImage(logo, Path.LOGO_ICON);
-        setImage(back, Path.BACK_NAV_ICON);
-        barcodeButton.setVisible(buttonVisibility);
-        barcodeButton.setDisable(!buttonVisibility);
-        logo.setDisable(!homeEnable);
-        back.setVisible(backVisibility);
-        back.setDisable(!backVisibility);
-    }
+	/**
+	 * Constructor for the nav bar
+	 * 
+	 * @param screenHandler    responsible handler
+	 * @param buttonVisibility true/false to show/hide optional button
+	 * @param backVisibility   show/hide back button
+	 * @param homeEnable       show/hide home button
+	 * @throws IOException IO errors
+	 */
+	public NavBarHandler(BaseScreenHandler screenHandler, boolean buttonVisibility, boolean backVisibility,
+			boolean homeEnable) throws IOException {
+		super(Path.NAVBAR_PATH);
+		this.parentScreenHandler = screenHandler;
+		setImage(logo, Path.LOGO_ICON);
+		setImage(back, Path.BACK_NAV_ICON);
+		barcodeButton.setVisible(buttonVisibility);
+		barcodeButton.setDisable(!buttonVisibility);
+		logo.setDisable(!homeEnable);
+		back.setVisible(backVisibility);
+		back.setDisable(!backVisibility);
+	}
 
-    /**
-     * go to previous screen
-     * @param e {@link MouseEvent}
-     */
-    @FXML
-    void backClickHandler(MouseEvent e) {
-            BaseScreenHandler previousScreen = parentScreenHandler.getPreviousScreen();
-            previousScreen.setScreenTitle(previousScreen.getScreenTitle());
-            previousScreen.show();
-    }
+	/**
+	 * go to previous screen
+	 * 
+	 * @param e {@link MouseEvent}
+	 */
+	@FXML
+	void backClickHandler(MouseEvent e) {
+		BaseScreenHandler previousScreen = parentScreenHandler.getPreviousScreen();
+		previousScreen.setScreenTitle(previousScreen.getScreenTitle());
+		previousScreen.show();
+	}
 
-    /**
-     * go to home screen
-     * @param e {@link MouseEvent}
-     */
-    @FXML
-    void logoClickHandler(MouseEvent e) {
-        try {
-            BaseScreenHandler homeScreen = parentScreenHandler.getHomeScreenHandler();
-            homeScreen.setScreenTitle(homeScreen.getScreenTitle());
-            homeScreen.show();
-        } catch (NullPointerException ex) {
-        }
-    }
+	/**
+	 * go to home screen
+	 * 
+	 * @param e {@link MouseEvent}
+	 */
+	@FXML
+	void logoClickHandler(MouseEvent e) {
+		try {
+			BaseScreenHandler homeScreen = parentScreenHandler.getHomeScreenHandler();
+			homeScreen.setScreenTitle(homeScreen.getScreenTitle());
+			homeScreen.show();
+		} catch (NullPointerException ex) {
+		}
+	}
 
-    /**
-     * bring up barcode popup
-     * @param e {@link MouseEvent}
-     */
-    @FXML
-    void barcodeButtonClickHandler(MouseEvent e) {
-        if(parentScreenHandler instanceof BaseScreenHandlerWithBarcodePopup) {
-            try {
-                BarcodePopup.display((BaseScreenHandlerWithBarcodePopup) parentScreenHandler);
-            } catch (IOException exception) {
-                exception.printStackTrace();
-            }
-        }
-    }
+	/**
+	 * bring up barcode popup
+	 * 
+	 * @param e {@link MouseEvent}
+	 */
+	@FXML
+	void barcodeButtonClickHandler(MouseEvent e) {
+		if (parentScreenHandler instanceof BaseScreenHandlerWithBarcodePopup) {
+			try {
+				BarcodePopup.display((BaseScreenHandlerWithBarcodePopup) parentScreenHandler);
+			} catch (IOException exception) {
+				exception.printStackTrace();
+			}
+		}
+	}
 }

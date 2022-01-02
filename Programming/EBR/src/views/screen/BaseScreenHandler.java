@@ -12,14 +12,14 @@ import java.util.Hashtable;
  * Base class for most screen handlers
  *
  * @author duykien
- * <p>
- * creted at: 15/12/2021
- * <p>
- * project name: EBR
- * <p>
- * teacher's name: Dr. Nguyen Thi Thu Trang
- * <p>
- * class name: CNTT02-K63
+ *         <p>
+ *         creted at: 15/12/2021
+ *         <p>
+ *         project name: EBR
+ *         <p>
+ *         teacher's name: Dr. Nguyen Thi Thu Trang
+ *         <p>
+ *         class name: CNTT02-K63
  */
 public class BaseScreenHandler extends views.screen.FXMLScreenHandler {
 
@@ -57,7 +57,8 @@ public class BaseScreenHandler extends views.screen.FXMLScreenHandler {
 
 	/**
 	 * constructor
-	 * @param stage {@link Stage}
+	 * 
+	 * @param stage      {@link Stage}
 	 * @param screenPath path to .fxml file
 	 * @throws IOException IO error
 	 */
@@ -90,7 +91,7 @@ public class BaseScreenHandler extends views.screen.FXMLScreenHandler {
 	 *
 	 * @param bController Controller to be set
 	 */
-	public void setBController(BaseController bController){
+	public void setBController(BaseController bController) {
 		this.bController = bController;
 	}
 
@@ -98,7 +99,7 @@ public class BaseScreenHandler extends views.screen.FXMLScreenHandler {
 	 *
 	 * @return {@link BaseScreenHandler}
 	 */
-	public BaseController getBController(){
+	public BaseController getBController() {
 		return this.bController;
 	}
 

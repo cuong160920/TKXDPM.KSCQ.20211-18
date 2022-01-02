@@ -3,17 +3,17 @@ package model.bike;
 /**
  * Model for standard electrical bike
  *
-  * @author Nguyen Van Chien
- * <p>
- * created_at: 22/12/2021
- * <p>
- * project name: EBR
- * <p>
- * teacher's name: Dr. Nguyen Thi Thu Trang
- * <p>
- * class name: KSCQ.CNTT 01 K63
- * <p>
- * helpers: teacher's teaching assistants
+ * @author Nguyen Van Chien
+ *         <p>
+ *         created_at: 22/12/2021
+ *         <p>
+ *         project name: EBR
+ *         <p>
+ *         teacher's name: Dr. Nguyen Thi Thu Trang
+ *         <p>
+ *         class name: KSCQ.CNTT 01 K63
+ *         <p>
+ *         helpers: teacher's teaching assistants
  */
 public class StandardElectricalBike extends Bike {
     protected float battery;
@@ -33,7 +33,7 @@ public class StandardElectricalBike extends Bike {
         this.pairOfPedals = 1;
         this.value = value;
         this.deposit = value/10;
-        // this.charge = charge;
+        this.charge = charge;
         this.battery = 100;
         this. timeLeft = 360;
     }
@@ -53,7 +53,7 @@ public class StandardElectricalBike extends Bike {
         this.pairOfPedals = 1;
         this.value = value;
         this.deposit = value/10;
-        // this.charge = charge;
+        this.charge = charge;
         this.battery = (float) 100;
         this. timeLeft = 360;
     }

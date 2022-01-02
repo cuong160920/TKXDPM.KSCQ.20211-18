@@ -18,30 +18,6 @@ import org.junit.jupiter.api.Test;
  */
 
 public class RefundTest {
-//    InvoiceScreenController invoiceScreenController;
-//    @BeforeEach
-//    void Setup() {
-//        invoiceScreenController = new InvoiceScreenController();
-//    }
-//    @Test
-//    public void refundTest1() {
-//        String contents = "refund";
-//        PaymentTransaction returnTransaction = this.invoiceScreenController.refund(1000000000, contents,
-//                "121319_group5_2020", "Group 5",
-//                "1125", "721");
-//
-//    }
-//
-//    @Test
-//    public void refundTest2() {
-//        String contents = "refund";
-//        try{
-//            PaymentTransaction returnTransaction = this.invoiceScreenController.refund(1000000000, contents,
-//                    "121319_group5_2020", "Group 5",
-//                    "1124", "721");
-//        }catch (Exception e) {
-//            Assertions.assertEquals("ERROR: Invalid card!", e.getMessage());
-//        }
-//    }
+
 
 }

@@ -11,16 +11,16 @@ import subsystem.interbank.InterbankSubsystemController;
  * Interbank to make transaction.
  * 
  * @author Nguyen Van Chien
- * <p>
- * created_at: 22/12/2021
- * <p>
- * project name: EBR
- * <p>
- * teacher's name: Dr. Nguyen Thi Thu Trang
- * <p>
- * class name: KSCQ.CNTT 01 K63
- * <p>
- * helpers: teacher's teaching assistants
+ *         <p>
+ *         created_at: 22/12/2021
+ *         <p>
+ *         project name: EBR
+ *         <p>
+ *         teacher's name: Dr. Nguyen Thi Thu Trang
+ *         <p>
+ *         class name: KSCQ.CNTT 01 K63
+ *         <p>
+ *         helpers: teacher's teaching assistants
  */
 public class InterbankSubsystem implements InterbankInterface {
 
@@ -39,18 +39,18 @@ public class InterbankSubsystem implements InterbankInterface {
 	}
 
 	/**
-	 * @see InterbankInterface#payOrder(CreditCard, int,
-	 *      String)
+	 * @see InterbankInterface#payOrder(CreditCard, int, String)
 	 */
-	public PaymentTransaction payOrder(CreditCard card, int amount, String contents) throws PaymentException, UnrecognizedException {
+	public PaymentTransaction payOrder(CreditCard card, int amount, String contents)
+			throws PaymentException, UnrecognizedException {
 		return ctrl.payDeposit(card, amount, contents);
 	}
 
 	/**
-	 * @see InterbankInterface#refund(CreditCard, int,
-	 *      String)
+	 * @see InterbankInterface#refund(CreditCard, int, String)
 	 */
-	public PaymentTransaction refund(CreditCard card, int amount, String contents) throws PaymentException, UnrecognizedException {
+	public PaymentTransaction refund(CreditCard card, int amount, String contents)
+			throws PaymentException, UnrecognizedException {
 		PaymentTransaction transaction = ctrl.refund(card, amount, contents);
 		return transaction;
 	}

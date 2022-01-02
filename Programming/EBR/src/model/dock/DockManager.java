@@ -10,99 +10,99 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
- * Model to manage all docks and handle database connections
- * that related to docks' info
+ * Model to manage all docks and handle database connections that related to
+ * docks' info
  *
  * @author Nguyen Van Chien
- * <p>
- * created_at: 22/12/2021
- * <p>
- * project name: EBR
- * <p>
- * teacher's name: Dr. Nguyen Thi Thu Trang
- * <p>
- * class name: KSCQ.CNTT 01 K63
- * <p>
- * helpers: teacher's teaching assistants
+ *         <p>
+ *         created_at: 22/12/2021
+ *         <p>
+ *         project name: EBR
+ *         <p>
+ *         teacher's name: Dr. Nguyen Thi Thu Trang
+ *         <p>
+ *         class name: KSCQ.CNTT 01 K63
+ *         <p>
+ *         helpers: teacher's teaching assistants
  */
 public class DockManager {
 
-    private static DockManager instance;   // singleton
-    private final ArrayList<Dock> dockList;
+	private static DockManager instance; // singleton
+	private final ArrayList<Dock> dockList;
 
-    public DockManager() {
-        this.dockList = new ArrayList<>();
-        refreshDockList();
-    }
+	public DockManager() {
+		this.dockList = new ArrayList<>();
+		refreshDockList();
+	}
 
-    /**
-     * get the instance of DockManager
-     * @return DockManager instance
-     */
-    public static DockManager getInstance() {
-        if (instance == null) {
-            instance = new DockManager();
-        }
+	/**
+	 * get the instance of DockManager
+	 * 
+	 * @return DockManager instance
+	 */
+	public static DockManager getInstance() {
+		if (instance == null) {
+			instance = new DockManager();
+		}
 
-        return instance;
-    }
+		return instance;
+	}
 
-    /**
-     * Updating local dock list with the current info in database
-     */
-    public void refreshDockList() {
-        this.dockList.clear();
-        System.out.println("refreshing");
-        // query for all Docks
-        String SQL = "SELECT * FROM dock ORDER BY dock.name";
+	/**
+	 * Updating local dock list with the current info in database
+	 */
+	public void refreshDockList() {
+		this.dockList.clear();
+		System.out.println("refreshing");
+		// query for all Docks
+		String SQL = "SELECT * FROM dock ORDER BY dock.name";
 
-        try (Connection conn = EBRDB.getConnection();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(SQL)) {
-            while (rs.next()) {
-                Dock dock = new Dock(rs.getString("id"),
-                        rs.getString("name"),
-                        rs.getString("location"),
-                        rs.getInt("capacity"),
-                        rs.getString("image_url"));
-                dock.setNumberOfAvailableBike(rs.getInt("taken_slot"));
-                dockList.add(dock);
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }
+		try (Connection conn = EBRDB.getConnection();
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(SQL)) {
+			while (rs.next()) {
+				Dock dock = new Dock(rs.getString("id"), rs.getString("name"), rs.getString("location"),
+						rs.getInt("capacity"), rs.getString("image_url"));
+				dock.setNumberOfAvailableBike(rs.getInt("taken_slot"));
+				dockList.add(dock);
+			}
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+	}
 
-    public ArrayList<Dock> getDockList() {
-        return dockList;
-    }
+	public ArrayList<Dock> getDockList() {
+		return dockList;
+	}
 
-    /**
-     * get dock instance by dock's id
-     * @param id dock's id
-     * @return instance of that Dock, null if id not found
-     */
-    public Dock getDockById(String id) {
-        for (Dock dock : dockList) {
-            if (dock.getId().equals(id))
-                return dock;
-        }
-        return null;
-    }
+	/**
+	 * get dock instance by dock's id
+	 * 
+	 * @param id dock's id
+	 * @return instance of that Dock, null if id not found
+	 */
+	public Dock getDockById(String id) {
+		for (Dock dock : dockList) {
+			if (dock.getId().equals(id))
+				return dock;
+		}
+		return null;
+	}
 
-    /**
-     * Search dock by its name or address
-     * @param nameOrAddress dock's name or dock's address
-     * @return searched dock
-     */
-    public ArrayList<Dock> searchDockByKeyword(String nameOrAddress) {
-        ArrayList<Dock> searchedDock = new ArrayList<>();
-        for (Dock dock : dockList) {
-            if (dock.getName().trim().toUpperCase().contains(nameOrAddress.trim().toUpperCase()) ||
-                    dock.getLocation().trim().toUpperCase().contains(nameOrAddress.trim().toUpperCase()))
-                searchedDock.add(dock);
-        }
-        return searchedDock;
-    }
+	/**
+	 * Search dock by its name or address
+	 * 
+	 * @param nameOrAddress dock's name or dock's address
+	 * @return searched dock
+	 */
+	public ArrayList<Dock> searchDockByKeyword(String nameOrAddress) {
+		ArrayList<Dock> searchedDock = new ArrayList<>();
+		for (Dock dock : dockList) {
+			if (dock.getName().trim().toUpperCase().contains(nameOrAddress.trim().toUpperCase())
+					|| dock.getLocation().trim().toUpperCase().contains(nameOrAddress.trim().toUpperCase()))
+				searchedDock.add(dock);
+		}
+		return searchedDock;
+	}
 
 }

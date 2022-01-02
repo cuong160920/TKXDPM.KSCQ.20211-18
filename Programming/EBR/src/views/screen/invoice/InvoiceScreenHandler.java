@@ -29,223 +29,221 @@ import java.util.HashMap;
  * Handler for the Invoice Screen
  *
  * @author duykien
- * <p>
- * creted at: 15/12/2021
- * <p>
- * project name: EBR
- * <p>
- * teacher's name: Dr. Nguyen Thi Thu Trang
- * <p>
- * class name: CNTT02-K63
- * <p>
- * helpers: teacher's teaching assistants
+ *         <p>
+ *         creted at: 15/12/2021
+ *         <p>
+ *         project name: EBR
+ *         <p>
+ *         teacher's name: Dr. Nguyen Thi Thu Trang
+ *         <p>
+ *         class name: CNTT02-K63
+ *         <p>
+ *         helpers: teacher's teaching assistants
  */
 
 public class InvoiceScreenHandler extends BaseScreenHandlerWithTransactionPopup {
-    private Invoice invoice;
-    @FXML
-    private Pane navbar;
-    @FXML
-    ImageView invoiceBikeImage;
+	private Invoice invoice;
+	@FXML
+	private Pane navbar;
+	@FXML
+	ImageView invoiceBikeImage;
 
-    @FXML
-    Text invoiceCardNumber;
+	@FXML
+	Text invoiceCardNumber;
 
+	@FXML
+	Text invoiceStartTime;
 
-    @FXML
-    Text invoiceStartTime;
+	@FXML
+	Text invoiceEndTime;
 
-    @FXML
-    Text invoiceEndTime;
+	@FXML
+	Text invoiceSessionLength;
 
-    @FXML
-    Text invoiceSessionLength;
+	@FXML
+	Text invoiceDeposit;
 
-    @FXML
-    Text invoiceDeposit;
+	@FXML
+	Text invoiceTotalFees;
 
-    @FXML
-    Text invoiceTotalFees;
+	@FXML
+	Text invoiceReturned;
 
-    @FXML
-    Text invoiceReturned;
+	@FXML
+	Text errorText;
 
-    @FXML
-    Text errorText;
+	@FXML
+	Text amountLabelText;
 
-    @FXML
-    Text amountLabelText;
+	@FXML
+	TextField cardNumberTextField;
 
-    @FXML
-    TextField cardNumberTextField;
+	@FXML
+	TextField cardOwnerTextField;
 
-    @FXML
-    TextField cardOwnerTextField;
+	@FXML
+	TextField expDateTextField;
 
-    @FXML
-    TextField expDateTextField;
+	@FXML
+	TextField securityCodeTextField;
 
-    @FXML
-    TextField securityCodeTextField;
+	@FXML
+	CheckBox changeCardCheckbox;
 
-    @FXML
-    CheckBox changeCardCheckbox;
+	@FXML
+	Button confirmButton;
 
-    @FXML
-    Button confirmButton;
+	private boolean changeCardState;
 
-    private boolean changeCardState;
+	/**
+	 * Create new invoice screen and do initial setup
+	 *
+	 * @param stage      {@link Stage}
+	 * @param screenPath path to fxml
+	 * @param invoice    {@link Invoice}
+	 * @param controller {@link InvoiceScreenController}
+	 * @throws IOException IO error
+	 */
+	public InvoiceScreenHandler(Stage stage, String screenPath, Invoice invoice, InvoiceScreenController controller)
+			throws IOException {
+		super(stage, screenPath);
+		this.invoice = invoice;
+		this.setBController(controller);
+		super.screenTitle = "Invoice Screen";
+		this.setImages();
+		this.setTextFields();
+		this.changeCardState = changeCardCheckbox.isSelected();
+		this.handleCheckBox();
+		navbar.getChildren().add(new NavBarHandler(this, false, false, false).getContent());
 
+		confirmButton.setOnMouseClicked(e -> {
+			try {
+				handleConfirmButton();
+			} catch (Exception exp) {
+				exp.printStackTrace();
+			}
+		});
+		changeCardCheckbox.setOnMouseClicked(e -> {
+			handleCheckBox();
+		});
+	}
 
-    /**
-     * Create new invoice screen and do initial setup
-     *
-     * @param stage      {@link Stage}
-     * @param screenPath path to fxml
-     * @param invoice    {@link Invoice}
-     * @param controller {@link InvoiceScreenController}
-     * @throws IOException IO error
-     */
-    public InvoiceScreenHandler(Stage stage, String screenPath, Invoice invoice, InvoiceScreenController controller) throws IOException {
-        super(stage, screenPath);
-        this.invoice = invoice;
-        this.setBController(controller);
-        super.screenTitle = "Invoice Screen";
-        this.setImages();
-        this.setTextFields();
-        this.changeCardState = changeCardCheckbox.isSelected();
-        this.handleCheckBox();
-        navbar.getChildren().add(new NavBarHandler(this, false, false, false).getContent());
+	/**
+	 * switch between new or old card info
+	 */
+	private void handleCheckBox() {
+		CreditCard card = this.invoice.getCard();
 
-        confirmButton.setOnMouseClicked(e -> {
-            try {
-                handleConfirmButton();
-            } catch (Exception exp) {
-                exp.printStackTrace();
-            }
-        });
-        changeCardCheckbox.setOnMouseClicked(e -> {
-            handleCheckBox();
-        });
-    }
+		if (!this.changeCardState) {
+			cardNumberTextField.setText(card.getCardNum());
+			cardOwnerTextField.setText(card.getCardOwner());
+			expDateTextField.setText(card.getExpDate());
+			securityCodeTextField.setText("***");
+			cardNumberTextField.setDisable(!this.changeCardState);
+			cardOwnerTextField.setDisable(!this.changeCardState);
+			expDateTextField.setDisable(!this.changeCardState);
+			securityCodeTextField.setDisable(!this.changeCardState);
+		} else {
+			cardNumberTextField.setText("");
+			cardOwnerTextField.setText("");
+			expDateTextField.setText("");
+			securityCodeTextField.setText("");
+			cardNumberTextField.setDisable(!this.changeCardState);
+			cardOwnerTextField.setDisable(!this.changeCardState);
+			expDateTextField.setDisable(!this.changeCardState);
+			securityCodeTextField.setDisable(!this.changeCardState);
+		}
 
-    /**
-     * switch between new or old card info
-     */
-    private void handleCheckBox() {
-        CreditCard card = this.invoice.getCard();
+		this.changeCardState = !this.changeCardState;
+	}
 
-        if (!this.changeCardState) {
-            cardNumberTextField.setText(card.getCardNum());
-            cardOwnerTextField.setText(card.getCardOwner());
-            expDateTextField.setText(card.getExpDate());
-            securityCodeTextField.setText("***");
-            cardNumberTextField.setDisable(!this.changeCardState);
-            cardOwnerTextField.setDisable(!this.changeCardState);
-            expDateTextField.setDisable(!this.changeCardState);
-            securityCodeTextField.setDisable(!this.changeCardState);
-        } else {
-            cardNumberTextField.setText("");
-            cardOwnerTextField.setText("");
-            expDateTextField.setText("");
-            securityCodeTextField.setText("");
-            cardNumberTextField.setDisable(!this.changeCardState);
-            cardOwnerTextField.setDisable(!this.changeCardState);
-            expDateTextField.setDisable(!this.changeCardState);
-            securityCodeTextField.setDisable(!this.changeCardState);
-        }
+	private void setImages() {
+		setImage(invoiceBikeImage, this.invoice.getBike().getImageURL());
+	}
 
-        this.changeCardState = !this.changeCardState;
-    }
+	/**
+	 * set value for all text fields
+	 */
+	private void setTextFields() {
+		try {
+			CreditCard card = this.invoice.getCard();
 
-    private void setImages() {
-        setImage(invoiceBikeImage, this.invoice.getBike().getImageURL());
-    }
+			invoiceCardNumber.setText(card.getCardNum());
+			invoiceStartTime.setText(this.invoice.getStartTime().format(Utils.DATE_FORMATER_FOR_DISPLAY));
+			invoiceEndTime.setText(this.invoice.getEndTime().format(Utils.DATE_FORMATER_FOR_DISPLAY));
+			invoiceSessionLength.setText(getBController().calculateSessionLength(this.invoice) + " seconds");
+			invoiceDeposit.setText(invoice.getDeposit() + " " + Configs.CURRENCY);
+			invoiceTotalFees.setText(getBController().calculateTotalFees(this.invoice) + " " + Configs.CURRENCY);
 
-    /**
-     * set value for all text fields
-     */
-    private void setTextFields() {
-        try {
-            CreditCard card = this.invoice.getCard();
+			int amount = this.getBController().calculateReturned(this.invoice);
+			if (amount >= 0)
+				invoiceReturned.setText(amount + " " + Configs.CURRENCY);
+			else {
+				invoiceReturned.setText(-amount + " " + Configs.CURRENCY);
+				amountLabelText.setText("PAY AMOUNT");
+			}
 
-            invoiceCardNumber.setText(card.getCardNum());
-            invoiceStartTime.setText(this.invoice.getStartTime().format(Utils.DATE_FORMATER_FOR_DISPLAY));
-            invoiceEndTime.setText(this.invoice.getEndTime().format(Utils.DATE_FORMATER_FOR_DISPLAY));
-            invoiceSessionLength.setText(getBController().calculateSessionLength(this.invoice) + " seconds");
-            invoiceDeposit.setText(invoice.getDeposit() + " " + Configs.CURRENCY);
-            invoiceTotalFees.setText(getBController().calculateTotalFees(this.invoice) + " " + Configs.CURRENCY);
+		} catch (NullPointerException exp) {
+			exp.printStackTrace();
+		}
+	}
 
-            int amount = this.getBController().calculateReturned(this.invoice);
-            if (amount >= 0)
-                invoiceReturned.setText(amount + " " + Configs.CURRENCY);
-            else {
-                invoiceReturned.setText(-amount + " " + Configs.CURRENCY);
-                amountLabelText.setText("PAY AMOUNT");
-            }
+	/**
+	 * Start returning bike process
+	 *
+	 * @throws IOException IO errors
+	 */
+	private void handleConfirmButton() throws IOException {
+		errorText.setVisible(false);
+		CreditCard tmpCard = this.invoice.getCard();
+		HashMap<String, String> cardInfo;
+		PaymentScreenController paymentScreenController = new PaymentScreenController(invoice.getBike());
 
-        } catch (NullPointerException exp) {
-            exp.printStackTrace();
-        }
-    }
+		try {
+			if (!this.changeCardState) {
+				String cardOwner = this.cardOwnerTextField.getText();
+				String cardNumber = this.cardNumberTextField.getText();
+				String expDate = this.expDateTextField.getText();
+				String securityCode = this.securityCodeTextField.getText();
+				cardInfo = new HashMap<>();
+				cardInfo.put("cardOwner", cardOwner.trim());
+				cardInfo.put("cardNumber", cardNumber.trim());
+				cardInfo.put("expDate", expDate.trim());
+				cardInfo.put("securityCode", securityCode.trim());
+				this.getBController().validateCreditCardForm(cardInfo);
+				tmpCard = getBController().getCardByCardNum(cardOwner, cardNumber, securityCode, expDate);
+			} else {
+				tmpCard = getBController().getCardByCardNum(this.invoice.getCard().getCardNum());
+			}
 
-    /**
-     * Start returning bike process
-     *
-     * @throws IOException IO errors
-     */
-    private void handleConfirmButton() throws IOException {
-        errorText.setVisible(false);
-        CreditCard tmpCard = this.invoice.getCard();
-        HashMap<String, String> cardInfo;
-        PaymentScreenController paymentScreenController = new PaymentScreenController(invoice.getBike());
+			int amount = this.getBController().calculateReturned(this.invoice);
+			PaymentTransaction returnTransaction;
 
-        try {
-            if (!this.changeCardState) {
-                String cardOwner = this.cardOwnerTextField.getText();
-                String cardNumber = this.cardNumberTextField.getText();
-                String expDate = this.expDateTextField.getText();
-                String securityCode = this.securityCodeTextField.getText();
-                cardInfo = new HashMap<>();
-                cardInfo.put("cardOwner", cardOwner.trim());
-                cardInfo.put("cardNumber", cardNumber.trim());
-                cardInfo.put("expDate", expDate.trim());
-                cardInfo.put("securityCode", securityCode.trim());
-                this.getBController().validateCreditCardForm(cardInfo);
-                tmpCard = getBController().getCardByCardNum(cardOwner, cardNumber, securityCode, expDate);
-            } else {
-                tmpCard = getBController().getCardByCardNum(this.invoice.getCard().getCardNum());
-            }
+			returnTransaction = this.getBController().makeTransaction(amount, tmpCard);
+			returnTransaction.setMethod("Credit Card");
+			returnTransaction.setType("return");
+			returnTransaction.setCard(tmpCard);
 
-            int amount = this.getBController().calculateReturned(this.invoice);
-            PaymentTransaction returnTransaction;
+			this.getBController().returnBikeProcessing(this.invoice, returnTransaction);
+			PaymentResultPopup.display(this, returnTransaction, "PAYMENT SUCCESSFUL");
 
-            returnTransaction = this.getBController().makeTransaction(amount, tmpCard);
-            returnTransaction.setMethod("Credit Card");
-            returnTransaction.setType("return");
-            returnTransaction.setCard(tmpCard);
+		} catch (FormException e) {
+			errorText.setText(e.getMessage());
+			errorText.setVisible(true);
+		} catch (PaymentException e) {
+			AlertPopup.error(e.getMessage());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
+	@Override
+	public InvoiceScreenController getBController() {
+		return (InvoiceScreenController) super.getBController();
+	}
 
-            this.getBController().returnBikeProcessing(this.invoice, returnTransaction);
-            PaymentResultPopup.display(this, returnTransaction, "PAYMENT SUCCESSFUL");
-
-        } catch (FormException e) {
-            errorText.setText(e.getMessage());
-            errorText.setVisible(true);
-        } catch (PaymentException e) {
-            AlertPopup.error(e.getMessage());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public InvoiceScreenController getBController() {
-        return (InvoiceScreenController) super.getBController();
-    }
-
-    @Override
-    public void continueAfterPopupClosed(PaymentTransaction paymentTransaction) throws IOException {
-            homeScreenHandler.show();
-    }
+	@Override
+	public void continueAfterPopupClosed(PaymentTransaction paymentTransaction) throws IOException {
+		homeScreenHandler.show();
+	}
 }

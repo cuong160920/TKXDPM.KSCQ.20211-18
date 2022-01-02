@@ -6,131 +6,178 @@ import model.dock.Dock;
  * Model for bike
  *
  * @author Nguyen Van Chien
- * <p>
- * created_at: 22/12/2021
- * <p>
- * project name: EBR
- * <p>
- * teacher's name: Dr. Nguyen Thi Thu Trang
- * <p>
- * class name: KSCQ.CNTT 01 K63
- * <p>
- * helpers: teacher's teaching assistants
+ *         <p>
+ *         created_at: 22/12/2021
+ *         <p>
+ *         project name: EBR
+ *         <p>
+ *         teacher's name: Dr. Nguyen Thi Thu Trang
+ *         <p>
+ *         class name: KSCQ.CNTT 01 K63
+ *         <p>
+ *         helpers: teacher's teaching assistants
  */
 public class Bike {
-    protected String id;
-    protected int barcode;
-    protected int saddle;
-    protected int pairOfPedals;
-    protected int rearSeat;
-    protected Dock dock;
-    protected String dockId;
-    protected int value;
-    protected int deposit;
-    protected int charge = 10000;
-    protected String imageURL;
-    protected String licensePlate;
-    public Bike() { }
+	protected String id;
+	protected int barcode;
+	protected int saddle;
+	protected int pairOfPedals;
+	protected int rearSeat;
+	protected Dock dock;
+	protected String dockId;
+	protected int value;
+	protected int deposit;
+	protected int charge = 10000;
+	protected String imageURL;
+	protected String licensePlate;
 
-    /**
-     * Constructor
-     * @param barcode Bike's barcode
-     * @param value Bike's value
-     * @param charge Bike's renting fee
-     */
-    public Bike(int barcode, int value, int charge) {
-        this.barcode = barcode;
-        this.saddle = 1;
-        this.rearSeat = 1;
-        this.pairOfPedals = 1;
-        this.value = value;
-        this.deposit = value/10;
-        // this.charge = charge;
-    }
+	public Bike() {
+	}
 
-    /**
-     * Most use constructor
-     * @param id Bike's uuid
-     * @param barcode Bike's barcode
-     * @param value Bike's value
-     * @param charge Bike's renting fee
-     */
-    public Bike(String id, int barcode, int value, int charge){
-        this.id = id;
-        this.barcode = barcode;
-        this.saddle = 1;
-        this.rearSeat = 1;
-        this.pairOfPedals = 1;
-        this.value = value;
-        this.deposit = value/10;
-        // this.charge = charge;
-    }
+	/**
+	 * Constructor
+	 * 
+	 * @param barcode Bike's barcode
+	 * @param value   Bike's value
+	 * @param charge  Bike's renting fee
+	 */
+	public Bike(int barcode, int value, int charge) {
+		this.barcode = barcode;
+		this.saddle = 1;
+		this.rearSeat = 1;
+		this.pairOfPedals = 1;
+		this.value = value;
+		this.deposit = value / 10;
+		// this.charge = charge;
+	}
 
-    /**
-     * This method is used to take bike out of dock
-     */
-    public void takeBikeOutOfDock() {
-        this.dock.removeBike(this);
-         BikeManager.getInstance().updateDockOfBike(this, "");
-    }
+	/**
+	 * Most use constructor
+	 * 
+	 * @param id      Bike's uuid
+	 * @param barcode Bike's barcode
+	 * @param value   Bike's value
+	 * @param charge  Bike's renting fee
+	 */
+	public Bike(String id, int barcode, int value, int charge) {
+		this.id = id;
+		this.barcode = barcode;
+		this.saddle = 1;
+		this.rearSeat = 1;
+		this.pairOfPedals = 1;
+		this.value = value;
+		this.deposit = value / 10;
+		// this.charge = charge;
+	}
 
-    /**
-     * This method is used to put bike into dock
-     * @param dock chosen dock
-     */
-    public void putBikeInDock(Dock dock) {
-        BikeManager.getInstance().updateDockOfBike(this, dock.getId());
-    }
+	/**
+	 * This method is used to take bike out of dock
+	 */
+	public void takeBikeOutOfDock() {
+		this.dock.removeBike(this);
+		BikeManager.getInstance().updateDockOfBike(this, "");
+	}
 
-    public String getId() { return id; }
+	/**
+	 * This method is used to put bike into dock
+	 * 
+	 * @param dock chosen dock
+	 */
+	public void putBikeInDock(Dock dock) {
+		BikeManager.getInstance().updateDockOfBike(this, dock.getId());
+	}
 
-    public void setId(String id) { this.id = id; }
+	public String getId() {
+		return id;
+	}
 
-    public int getBarcode() { return barcode; }
+	public void setId(String id) {
+		this.id = id;
+	}
 
-    public void setBarcode(int barcode) { this.barcode = barcode; }
+	public int getBarcode() {
+		return barcode;
+	}
 
-    public int getSaddle() { return saddle; }
+	public void setBarcode(int barcode) {
+		this.barcode = barcode;
+	}
 
-    public void setSaddle(int saddle) { this.saddle = saddle; }
+	public int getSaddle() {
+		return saddle;
+	}
 
-    public int getRearSeat() { return rearSeat; }
+	public void setSaddle(int saddle) {
+		this.saddle = saddle;
+	}
 
-    public void setRearSeat(int rearSeat) { this.rearSeat = rearSeat; }
+	public int getRearSeat() {
+		return rearSeat;
+	}
 
-    public int getPairOfPedals() { return pairOfPedals; }
+	public void setRearSeat(int rearSeat) {
+		this.rearSeat = rearSeat;
+	}
 
-    public void setPairOfPedals(int pairOfPedals) { this.pairOfPedals = pairOfPedals; }
+	public int getPairOfPedals() {
+		return pairOfPedals;
+	}
 
-    public Dock getDock() { return dock; }
+	public void setPairOfPedals(int pairOfPedals) {
+		this.pairOfPedals = pairOfPedals;
+	}
 
-    public void setDock(Dock dock) { this.dock = dock; }
+	public Dock getDock() {
+		return dock;
+	}
 
-    public String getDockId() { return dockId; }
+	public void setDock(Dock dock) {
+		this.dock = dock;
+	}
 
-    public void setDockId(String dockId) { this.dockId = dockId; }
+	public String getDockId() {
+		return dockId;
+	}
 
-    public int getValue() { return value; }
+	public void setDockId(String dockId) {
+		this.dockId = dockId;
+	}
 
-    public void setValue(int value) { this.value = value; }
+	public int getValue() {
+		return value;
+	}
 
-    public int getDeposit() { return deposit; }
+	public void setValue(int value) {
+		this.value = value;
+	}
 
-    public void setDeposit(int deposit) { this.deposit = deposit; }
+	public int getDeposit() {
+		return deposit;
+	}
 
-    public int getCharge() { return charge; }
+	public void setDeposit(int deposit) {
+		this.deposit = deposit;
+	}
 
-    // public void setCharge(int charge) { this.charge = charge; }
+	public int getCharge() {
+		return charge;
+	}
 
-    public String getImageURL() { return imageURL; }
+	// public void setCharge(int charge) { this.charge = charge; }
 
-    public void setImageURL(String imageURL) { this.imageURL = imageURL; }
+	public String getImageURL() {
+		return imageURL;
+	}
 
-    public String getBikeType() {
-        return "Bike";
-    }
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+	}
 
-    public String getLicensePlate() {
+	public String getBikeType() {
+		return "Bike";
+	}
+
+	public String getLicensePlate() {
 		return licensePlate;
 	}
 
@@ -139,12 +186,12 @@ public class Bike {
 	}
 
 	@Override
-    public boolean equals(Object obj) {
-        if (obj instanceof Bike) {
-            Bike bike = (Bike) obj;
-            return bike.getId().equals(this.id);
-        }
-        return false;
-    }
+	public boolean equals(Object obj) {
+		if (obj instanceof Bike) {
+			Bike bike = (Bike) obj;
+			return bike.getId().equals(this.id);
+		}
+		return false;
+	}
 
 }
