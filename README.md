@@ -1,5 +1,17 @@
 # TKXDPM.KSCQ.20211-18
 ----------
+#Lab-05: Design Concepts and Design Principles
+
+## Tasks
+- thiết kế lại chương trình để đáp ứng 2 tiêu chí Designe Concepts và Design Principles
+
+## Contribute
+- Các thành viên tìm ra các chỗ chưa đáp ứng các tiêu chí khi có những yêu cầu thêm
+- Hoàng Hải Đăng: Coding
+
+## Revisions
+
+----------
 #Lab-04: Coding and Testing
 
 ## Tasks
