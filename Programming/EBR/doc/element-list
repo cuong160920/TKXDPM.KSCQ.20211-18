@@ -10,8 +10,6 @@ model.bike
 model.db
 model.dock
 model.invoice
-model.payment
-model.payment.creditCard
 model.payment.paymentCard
 model.payment.paymentCard.creditCard
 model.payment.transaction
