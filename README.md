@@ -21,7 +21,7 @@
 - Nguyễn Văn Chiến: Thiết kế 1 phần Views, Controller, Model
 - Hoàng Hải Đăng:  Thiết kế 1 phần Views, Controller, Model
 - Nguyễn Đào Duy Kiên:  Thiết kế 1 phần Views, Controller, Model
-- Nguyễn Mạnh Cường: Testing, thiết kế 1 phần Model
+- Nguyễn Mạnh Cường: Testing
 
 ## Revisions
 
