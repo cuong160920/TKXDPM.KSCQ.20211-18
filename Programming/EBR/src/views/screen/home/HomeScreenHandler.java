@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import model.bike.Bike;
 import model.dock.Dock;
 import utils.Path;
 import utils.Utils;
@@ -106,7 +107,9 @@ public class HomeScreenHandler extends BaseScreenHandlerWithBarcodePopup impleme
                 if (dockList.indexOf(dock) % 2 == 0)
                     vboxDockList1.getChildren().add(dockListItem.getContent());
                 else vboxDockList2.getChildren().add(dockListItem.getContent());
-
+                ArrayList<Bike> bikeList = (new DockScreenController()).getBikeListOfDock(dock.getId());
+                dock.clearBikeList();
+                dock.addListOfBikes(bikeList);
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());

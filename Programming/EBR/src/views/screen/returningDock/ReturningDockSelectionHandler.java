@@ -14,6 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.dock.Dock;
+import model.dock.DockManager;
 import model.invoice.Invoice;
 import model.session.Session;
 import utils.Path;
@@ -88,6 +89,7 @@ public class ReturningDockSelectionHandler extends BaseScreenHandler implements 
         super.screenTitle = "Returning Dock Selection Screen";
 
         this.session = session;
+        //DockManager.getInstance().refreshDockList();
         dockList = this.getBController().getDockList();
         displayDockList();
         navbar.getChildren().add(new NavBarHandler(this, false, false, false).getContent());
