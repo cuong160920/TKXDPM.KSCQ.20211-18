@@ -42,7 +42,7 @@ public class Path {
 	public static final String BLANK_SCREEN_PATH = "/views/fxml/blank.fxml";
 	public static final String INVOICE_SCREEN_PATH = "/views/fxml/invoice.fxml";
 	public static final String SESSION_SCREEN_PATH = "/views/fxml/session.fxml";
-	public static final String SPLASH_SCREEN_PATH = "/views/fxml/splash1.fxml";
+	public static final String SPLASH_SCREEN_PATH = "/views/fxml/Splash1.fxml";
 	public static final String HOME_PATH = "/views/fxml/home.fxml";
 	public static final String POPUP_PATH = "/views/fxml/barcode_popup.fxml";
 	public static final String DOCK_LIST_ITEM_PATH = "/views/fxml/dock_list_item.fxml";
