@@ -1,15 +1,27 @@
 # TKXDPM.KSCQ.20211-18
 ----------
+#Lab-05: Design Concepts and Design Principles
+
+## Tasks
+- thiết kế lại chương trình để đáp ứng 2 tiêu chí Designe Concepts và Design Principles
+
+## Contribute
+- Các thành viên tìm ra các chỗ chưa đáp ứng các tiêu chí khi có những yêu cầu thêm
+- Hoàng Hải Đăng: Coding
+
+## Revisions
+
+----------
 #Lab-04: Coding and Testing
 
 ## Tasks
 - Xây dựng chương trình và kiểm thử
 
 ## Contribute
-- Nguyễn Văn Chiến: Thiết kế 1 phần Views, Controller, Model
-- Hoàng Hải Đăng:  Thiết kế 1 phần Views, Controller, Model
-- Nguyễn Đào Duy Kiên:  Thiết kế 1 phần Views, Controller, Model
-- Nguyễn Mạnh Cường: Testing, thiết kế 1 phần Model
+- Nguyễn Văn Chiến: Thiết kế Model
+- Hoàng Hải Đăng:  Thiết kế Controller
+- Nguyễn Đào Duy Kiên:  Thiết kế 1 phần Views
+- Nguyễn Mạnh Cường: Testing
 
 ## Revisions
 

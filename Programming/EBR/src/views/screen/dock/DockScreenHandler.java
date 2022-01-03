@@ -22,167 +22,166 @@ import java.util.ArrayList;
  * Handler for Dock View Screen
  *
  * @author duykien
- * <p>
- * creted at: 15/12/2021
- * <p>
- * project name: EBR
- * <p>
- * teacher's name: Dr. Nguyen Thi Thu Trang
- * <p>
- * class name: CNTT02-K63
- * <p>
- * helpers: teacher's teaching assistants
+ *         <p>
+ *         creted at: 15/12/2021
+ *         <p>
+ *         project name: EBR
+ *         <p>
+ *         teacher's name: Dr. Nguyen Thi Thu Trang
+ *         <p>
+ *         class name: CNTT02-K63
+ *         <p>
+ *         helpers: teacher's teaching assistants
  */
 public class DockScreenHandler extends BaseScreenHandlerWithBarcodePopup {
 
-    @FXML
-    private Pane navbar;
+	@FXML
+	private Pane navbar;
 
-    @FXML
-    private ImageView searchImg;
+	@FXML
+	private ImageView searchImg;
 
-    @FXML
-    private Button barcodeButton;
+	@FXML
+	private Button barcodeButton;
 
-    @FXML
-    private ImageView dockImg;
+	@FXML
+	private ImageView dockImg;
 
-    @FXML
-    private Text dockName;
+	@FXML
+	private Text dockName;
 
-    @FXML
-    private Text dockAddress;
+	@FXML
+	private Text dockAddress;
 
-    @FXML
-    private ImageView parkingIcon;
+	@FXML
+	private ImageView parkingIcon;
 
-    @FXML
-    private ImageView standardBikeIcon;
+	@FXML
+	private ImageView standardBikeIcon;
 
-    @FXML
-    private ImageView twinBikeIcon;
+	@FXML
+	private ImageView twinBikeIcon;
 
-    @FXML
-    private ImageView standardEBikeIcon;
+	@FXML
+	private ImageView standardEBikeIcon;
 
-    @FXML
-    private ImageView twinEBikeIcon;
+	@FXML
+	private ImageView twinEBikeIcon;
 
-    @FXML
-    private Text dockCapacity;
+	@FXML
+	private Text dockCapacity;
 
-    @FXML
-    private Text dockStandardBikeNum;
+	@FXML
+	private Text dockStandardBikeNum;
 
-    @FXML
-    private Text dockTwinBikeNum;
+	@FXML
+	private Text dockTwinBikeNum;
 
-    @FXML
-    private Text dockEBikeNum;
+	@FXML
+	private Text dockEBikeNum;
 
-    @FXML
-    private Text dockTwinEBikeNum;
+	@FXML
+	private Text dockTwinEBikeNum;
 
+	@FXML
+	private HBox hboxBikeList;
 
-    @FXML
-    private HBox hboxBikeList;
+	private final Dock dock;
 
-    private final Dock dock;
+	private ArrayList<Bike> bikeList;
 
-    private ArrayList<Bike> bikeList;
+	public DockScreenHandler(Stage stage, String screenPath, Dock dock) throws IOException {
+		super(stage, screenPath);
+		this.dock = dock;
+		super.screenTitle = "Dock Screen";
+		this.setImages();
+		navbar.getChildren().add(new NavBarHandler(this, true, true, true).getContent());
+	}
 
+	/**
+	 * Show all bikes in dock
+	 */
+	public void displayBikeList() {
+		hboxBikeList.getChildren().clear();
 
-    public DockScreenHandler(Stage stage, String screenPath, Dock dock) throws IOException {
-        super(stage, screenPath);
-        this.dock = dock;
-        super.screenTitle = "Dock Screen";
-        this.setImages();
-        navbar.getChildren().add(new NavBarHandler(this, true, true, true).getContent());
-    }
+		try {
+			this.bikeList = ((DockScreenController) this.getBController()).getBikeListOfDock(dock.getId());
 
-    /**
-     * Show all bikes in dock
-     */
-    public void displayBikeList() {
-        hboxBikeList.getChildren().clear();
+			for (Bike bike : bikeList) {
 
-        try {
-            this.bikeList = ((DockScreenController) this.getBController()).getBikeListOfDock(dock.getId());
+				BikeListItemHandler bikeListItem = new BikeListItemHandler(Path.BIKE_LIST_ITEM_PATH, this);
 
-            for (Bike bike : bikeList) {
+				bikeListItem.setBike(bike);
 
-                BikeListItemHandler bikeListItem = new BikeListItemHandler(Path.BIKE_LIST_ITEM_PATH, this);
+				hboxBikeList.getChildren().add(bikeListItem.getContent());
+			}
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		} catch (NullPointerException e) {
+			e.printStackTrace();
+		}
 
-                bikeListItem.setBike(bike);
+		dock.clearBikeList();
+		dock.addListOfBikes(this.bikeList);
+		setDockDetail();
+	}
 
-                hboxBikeList.getChildren().add(bikeListItem.getContent());
-            }
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
+	private void setImages() {
+		setImage(parkingIcon, Path.PARKING_ICON);
+		setImage(standardBikeIcon, Path.STANDARD_BIKE_ICON);
+		setImage(twinBikeIcon, Path.TWIN_BIKE_ICON);
+		setImage(standardEBikeIcon, Path.STANDARD_BIKE_ICON);
+		setImage(twinEBikeIcon, Path.TWIN_ELECTRICAL_BIKE_ICON);
+		setImage(dockImg, dock.getImageURL());
+	}
 
-        dock.clearBikeList();
-        dock.addListOfBikes(this.bikeList);
-        setDockDetail();
-    }
+	/**
+	 * set all label and text fields value
+	 */
+	private void setDockDetail() {
+		dockName.setText(dock.getName());
+		dockAddress.setText(dock.getLocation());
+		setImage(dockImg, dock.getImageURL());
+		dockCapacity.setText("" + dock.getCapacity());
 
-    private void setImages() {
-        setImage(parkingIcon, Path.PARKING_ICON);
-        setImage(standardBikeIcon, Path.STANDARD_BIKE_ICON);
-        setImage(twinBikeIcon, Path.TWIN_BIKE_ICON);
-        setImage(standardEBikeIcon, Path.STANDARD_BIKE_ICON);
-        setImage(twinEBikeIcon, Path.TWIN_ELECTRICAL_BIKE_ICON);
-        setImage(dockImg, dock.getImageURL());
-    }
+		int sb = 0;
+		int tb = 0;
+		int eb = 0;
+		int teb = 0;
+		for (Bike bike : dock.getBikeList()) {
+			if (bike instanceof TwinBike) {
+				tb += 1;
+			} else if (bike instanceof StandardBike) {
+				sb += 1;
+			} else if (bike instanceof TwinElectricalBike) {
+				teb += 1;
+			} else if (bike instanceof StandardElectricalBike) {
+				eb += 1;
+			}
+		}
 
-    /**
-     * set all label and text fields value
-     */
-    private void setDockDetail() {
-        dockName.setText(dock.getName());
-        dockAddress.setText(dock.getLocation());
-        setImage(dockImg, dock.getImageURL());
-        dockCapacity.setText("" + dock.getCapacity());
+		dockStandardBikeNum.setText("" + sb);
+		dockTwinBikeNum.setText("" + tb);
+		dockEBikeNum.setText("" + eb);
+		dockTwinEBikeNum.setText("" + teb);
+	}
 
-        int sb = 0;
-        int tb = 0;
-        int eb = 0;
-        int teb = 0;
-        for (Bike bike : dock.getBikeList()) {
-            if (bike instanceof TwinBike) {
-                tb += 1;
-            } else if (bike instanceof StandardBike) {
-                sb += 1;
-            } else if (bike instanceof TwinElectricalBike) {
-                teb += 1;
-            } else if (bike instanceof StandardElectricalBike) {
-                eb += 1;
-            }
-        }
-
-        dockStandardBikeNum.setText("" + sb);
-        dockTwinBikeNum.setText("" + tb);
-        dockEBikeNum.setText("" + eb);
-        dockTwinEBikeNum.setText("" + teb);
-    }
-
-    /**
-     * move to bike screen
-     * @param bike {@link Bike} bike to be shown
-     */
-    public void BikeScreenTransition(Bike bike) {
-        try {
-            bike.setDock(dock);
-            BikeScreenHandler bikeScreenHandler = new BikeScreenHandler(this.stage, Path.BIKE_PATH, bike);
-            bikeScreenHandler.setScreenTitle(bikeScreenHandler.getScreenTitle());
-            bikeScreenHandler.setPreviousScreen(this);
-            bikeScreenHandler.setHomeScreenHandler(homeScreenHandler);
-            bikeScreenHandler.toggleRentNowButton(false);
-            bikeScreenHandler.show();
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-    }
+	/**
+	 * move to bike screen
+	 * 
+	 * @param bike {@link Bike} bike to be shown
+	 */
+	public void BikeScreenTransition(Bike bike) {
+		try {
+			bike.setDock(dock);
+			BikeScreenHandler bikeScreenHandler = new BikeScreenHandler(this.stage, Path.BIKE_PATH, bike);
+			bikeScreenHandler.setScreenTitle(bikeScreenHandler.getScreenTitle());
+			bikeScreenHandler.setPreviousScreen(this);
+			bikeScreenHandler.setHomeScreenHandler(homeScreenHandler);
+			bikeScreenHandler.toggleRentNowButton(false);
+			bikeScreenHandler.show();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
 }

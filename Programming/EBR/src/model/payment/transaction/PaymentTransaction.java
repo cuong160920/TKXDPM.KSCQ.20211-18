@@ -7,16 +7,16 @@ import model.payment.paymentCard.creditCard.CreditCard;
  * Model to store Payment Transaction's info
  *
  * @author Nguyen Van Chien
- * <p>
- * created_at: 22/12/2021
- * <p>
- * project name: EBR
- * <p>
- * teacher's name: Dr. Nguyen Thi Thu Trang
- * <p>
- * class name: KSCQ.CNTT 01 K63
- * <p>
- * helpers: teacher's teaching assistants
+ *         <p>
+ *         created_at: 22/12/2021
+ *         <p>
+ *         project name: EBR
+ *         <p>
+ *         teacher's name: Dr. Nguyen Thi Thu Trang
+ *         <p>
+ *         class name: KSCQ.CNTT 01 K63
+ *         <p>
+ *         helpers: teacher's teaching assistants
  */
 public class PaymentTransaction {
 
@@ -29,7 +29,7 @@ public class PaymentTransaction {
 	private String id;
 	private String type;
 	private String method;
-	
+
 	public PaymentTransaction(String errorCode, PaymentCard card, String transactionId, String transactionContent,
 			int amount, String createdAt) {
 		this.errorCode = errorCode;
@@ -42,11 +42,12 @@ public class PaymentTransaction {
 
 	/**
 	 * constructor for create from database's info
-	 * @param id uuid
+	 * 
+	 * @param id            uuid
 	 * @param transactionId id of transaction
-	 * @param type its type
-	 * @param amount transfer amount
-	 * @param method payment method
+	 * @param type          its type
+	 * @param amount        transfer amount
+	 * @param method        payment method
 	 */
 	public PaymentTransaction(String id, String transactionId, String type, int amount, String method) {
 		this.id = id;
@@ -55,7 +56,7 @@ public class PaymentTransaction {
 		this.method = method;
 		this.transactionId = transactionId;
 	}
-	
+
 	public String getErrorCode() {
 		return errorCode;
 	}
@@ -87,7 +88,6 @@ public class PaymentTransaction {
 	public void setCard(PaymentCard card) {
 		this.card = card;
 	}
-
 
 	public String getMethod() {
 		return method;

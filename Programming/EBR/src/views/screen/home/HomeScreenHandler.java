@@ -29,16 +29,16 @@ import java.util.logging.Logger;
  * Handler for home screen
  *
  * @author duykien
- * <p>
- * creted at: 15/12/2021
- * <p>
- * project name: EBR
- * <p>
- * teacher's name: Dr. Nguyen Thi Thu Trang
- * <p>
- * class name: CNTT02-K63
- * <p>
- * helpers: teacher's teaching assistants
+ *         <p>
+ *         creted at: 15/12/2021
+ *         <p>
+ *         project name: EBR
+ *         <p>
+ *         teacher's name: Dr. Nguyen Thi Thu Trang
+ *         <p>
+ *         class name: CNTT02-K63
+ *         <p>
+ *         helpers: teacher's teaching assistants
  */
 
 public class HomeScreenHandler extends BaseScreenHandlerWithBarcodePopup implements Initializable {

@@ -18,56 +18,59 @@ import java.util.ResourceBundle;
  * Handler for the Splash Screen
  *
  * @author Nguyen Van Chien
- * <p>
- * created_at: 22/12/2021
- * <p>
- * project name: EBR
- * <p>
- * teacher's name: Dr. Nguyen Thi Thu Trang
- * <p>
- * class name: KSCQ.CNTT 01 K63
- * <p>
- * helpers: teacher's teaching assistants
+ *         <p>
+ *         created_at: 22/12/2021
+ *         <p>
+ *         project name: EBR
+ *         <p>
+ *         teacher's name: Dr. Nguyen Thi Thu Trang
+ *         <p>
+ *         class name: KSCQ.CNTT 01 K63
+ *         <p>
+ *         helpers: teacher's teaching assistants
  */
 
 public class SplashScreenHandler extends BaseScreenHandler implements Initializable {
 
-    @FXML
-    ImageView bigLogo;
+	@FXML
+	ImageView bigLogo;
 
-    @FXML
-    Button start;
+	@FXML
+	Button start;
 
-    /**
-     * constructor
-     * @param stage {@link Stage}
-     * @param screenPath path to .fxml file
-     * @throws IOException IO error
-     */
-    public SplashScreenHandler(Stage stage, String screenPath) throws IOException {
-        super(stage, screenPath);
-        super.screenTitle = "Splash Screen";
-    }
+	/**
+	 * constructor
+	 * 
+	 * @param stage      {@link Stage}
+	 * @param screenPath path to .fxml file
+	 * @throws IOException IO error
+	 */
+	public SplashScreenHandler(Stage stage, String screenPath) throws IOException {
+		super(stage, screenPath);
+		super.screenTitle = "Splash Screen";
+	}
 
-    /**
-     * call on init
-     * @param location image path for big logo
-     * @param resources {@link ResourceBundle}
-     */
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        setImage(bigLogo, Path.BIG_LOGO_ICON);
-        start.setOnMouseClicked(e -> {
-            System.out.println("Button clicked");
-            try {
-                HomeScreenHandler homeScreenHandler = new HomeScreenHandler(this.stage, Path.HOME_PATH, new HomeScreenController());
-                homeScreenHandler.setScreenTitle(homeScreenHandler.getScreenTitle());
-                homeScreenHandler.setPreviousScreen(this);
-                homeScreenHandler.show();
+	/**
+	 * call on init
+	 * 
+	 * @param location  image path for big logo
+	 * @param resources {@link ResourceBundle}
+	 */
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		setImage(bigLogo, Path.BIG_LOGO_ICON);
+		start.setOnMouseClicked(e -> {
+			System.out.println("Button clicked");
+			try {
+				HomeScreenHandler homeScreenHandler = new HomeScreenHandler(this.stage, Path.HOME_PATH,
+						new HomeScreenController());
+				homeScreenHandler.setScreenTitle(homeScreenHandler.getScreenTitle());
+				homeScreenHandler.setPreviousScreen(this);
+				homeScreenHandler.show();
 
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
-        });
-    }
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		});
+	}
 }

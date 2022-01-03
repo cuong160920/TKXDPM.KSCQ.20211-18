@@ -2,8 +2,9 @@ unnamed package
 common.exception
 common.exception.cardException
 controller
-controller.renting
-controller.renting.RentingSessionControllerTest
+controller.barcodePopupController
+controller.InvocieScreenController
+controller.SessionScreenControllerTest
 controller.strategy
 model.bike
 model.db
@@ -13,7 +14,6 @@ model.payment.paymentCard
 model.payment.paymentCard.creditCard
 model.payment.transaction
 model.session
-returning
 subsystem
 subsystem.interbank
 utils

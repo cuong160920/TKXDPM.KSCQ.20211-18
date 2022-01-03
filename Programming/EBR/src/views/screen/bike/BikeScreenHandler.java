@@ -24,140 +24,142 @@ import java.util.ResourceBundle;
  * Handler for dock list item
  *
  * @author duykien
- * <p>
- * creted at: 15/12/2021
- * <p>
- * project name: EBR
- * <p>
- * teacher's name: Dr. Nguyen Thi Thu Trang
- * <p>
- * class name: CNTT02-K63
- * <p>
- * helpers: teacher's teaching assistants
+ *         <p>
+ *         creted at: 15/12/2021
+ *         <p>
+ *         project name: EBR
+ *         <p>
+ *         teacher's name: Dr. Nguyen Thi Thu Trang
+ *         <p>
+ *         class name: CNTT02-K63
+ *         <p>
+ *         helpers: teacher's teaching assistants
  */
 public class BikeScreenHandler extends BaseScreenHandler implements Initializable {
 
-    @FXML
-    private Button barcodeButton;
+	@FXML
+	private Button barcodeButton;
 
-    @FXML
-    private Text bikeBarcode;
+	@FXML
+	private Text bikeBarcode;
 
-    @FXML
-    private Text bikeDockName;
+	@FXML
+	private Text bikeDockName;
 
-    @FXML
-    private Text bikeBattery;
+	@FXML
+	private Text bikeBattery;
 
-    @FXML
-    private Text bikeUsage;
+	@FXML
+	private Text bikeUsage;
 
-    @FXML
-    private Text bikeDeposit;
+	@FXML
+	private Text bikeDeposit;
 
-    @FXML
-    private Text bikeCharge;
+	@FXML
+	private Text bikeCharge;
 
-    @FXML
-    private Text saddleNum;
+	@FXML
+	private Text saddleNum;
 
-    @FXML
-    private Text pedalsNum;
+	@FXML
+	private Text pedalsNum;
 
-    @FXML
-    private Text rearSeatNum;
+	@FXML
+	private Text rearSeatNum;
 
-    @FXML
-    private ImageView bikeImage;
-    @FXML
-    private ImageView saddleImg;
-    @FXML
-    private ImageView pedalsImg;
-    @FXML
-    private ImageView rearSeatImg;
-    @FXML
-    private ImageView batteryImg;
+	@FXML
+	private ImageView bikeImage;
+	@FXML
+	private ImageView saddleImg;
+	@FXML
+	private ImageView pedalsImg;
+	@FXML
+	private ImageView rearSeatImg;
+	@FXML
+	private ImageView batteryImg;
 
-    @FXML
-    private Button rentNowButton;
+	@FXML
+	private Button rentNowButton;
 
-    @FXML
-    private Pane navbar;
-    
-    @FXML
-    private Text licensePlate;
+	@FXML
+	private Pane navbar;
 
-    private Bike bike;
+	@FXML
+	private Text licensePlate;
 
-    /**
-     * Constructor and initial setup for screen
-     * @param stage {@link Stage}
-     * @param screenPath path to fxml
-     * @param bike {@link Bike} bike to be display
-     * @throws IOException IO errors
-     */
-    public BikeScreenHandler(Stage stage, String screenPath, Bike bike) throws IOException {
-        super(stage, screenPath);
-        this.bike = bike;
-        super.screenTitle = "Bike Screen";
-        this.setImages();
-        displayBike();
-        navbar.getChildren().add(new NavBarHandler(this, false, true, true).getContent());
-    }
+	private Bike bike;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+	/**
+	 * Constructor and initial setup for screen
+	 * 
+	 * @param stage      {@link Stage}
+	 * @param screenPath path to fxml
+	 * @param bike       {@link Bike} bike to be display
+	 * @throws IOException IO errors
+	 */
+	public BikeScreenHandler(Stage stage, String screenPath, Bike bike) throws IOException {
+		super(stage, screenPath);
+		this.bike = bike;
+		super.screenTitle = "Bike Screen";
+		this.setImages();
+		displayBike();
+		navbar.getChildren().add(new NavBarHandler(this, false, true, true).getContent());
+	}
+
+	@Override
+	public void initialize(URL url, ResourceBundle resourceBundle) {
 		rentNowButton.setOnMouseClicked(e -> {
-            System.out.println("Button clicked");
-            try {
-                PaymentScreenController paymentScreenController = new PaymentScreenController(bike);
-                PaymentScreenHandler paymentScreenHandler = new PaymentScreenHandler(this.stage, Path.PAYMENT_SCREEN_PATH, paymentScreenController);
-                paymentScreenHandler.setHomeScreenHandler(this.homeScreenHandler);
-                paymentScreenHandler.setPreviousScreen(this);
-                paymentScreenHandler.setScreenTitle(paymentScreenHandler.getScreenTitle());
-                paymentScreenHandler.show();
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
+			System.out.println("Button clicked");
+			try {
+				PaymentScreenController paymentScreenController = new PaymentScreenController(bike);
+				PaymentScreenHandler paymentScreenHandler = new PaymentScreenHandler(this.stage,
+						Path.PAYMENT_SCREEN_PATH, paymentScreenController);
+				paymentScreenHandler.setHomeScreenHandler(this.homeScreenHandler);
+				paymentScreenHandler.setPreviousScreen(this);
+				paymentScreenHandler.setScreenTitle(paymentScreenHandler.getScreenTitle());
+				paymentScreenHandler.show();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 
-        });
-    }
+		});
+	}
 
-    /**
-     * Show bike info
-     */
-    private void displayBike() {
-        try {
-            bikeBarcode.setText(Integer.toString(bike.getBarcode()));
-            bikeDeposit.setText(bike.getDeposit() + " " + Configs.CURRENCY);
-            bikeCharge.setText(bike.getCharge() + " " + Configs.CURRENCY + "/h");
-            bikeDockName.setText(bike.getDock().getName());
-            pedalsNum.setText(bike.getPairOfPedals() + "");
-            saddleNum.setText(bike.getSaddle() + "");
-            rearSeatNum.setText(bike.getRearSeat() + "");
-            licensePlate.setText(bike.getLicensePlate());
-            if (bike instanceof StandardElectricalBike) {
-                bikeBattery.setText(((StandardElectricalBike) bike).getBattery() + "%");
-                bikeUsage.setText(((StandardElectricalBike) bike).getTimeLeft() + " minutes");
-            } else {
-                bikeBattery.setVisible(false);
-                bikeUsage.setVisible(false);
-                batteryImg.setVisible(false);
-            }
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
-    }
+	/**
+	 * Show bike info
+	 */
+	private void displayBike() {
+		try {
+			bikeBarcode.setText(Integer.toString(bike.getBarcode()));
+			bikeDeposit.setText(bike.getDeposit() + " " + Configs.CURRENCY);
+			bikeCharge.setText(bike.getCharge() + " " + Configs.CURRENCY + "/h");
+			bikeDockName.setText(bike.getDock().getName());
+			pedalsNum.setText(bike.getPairOfPedals() + "");
+			saddleNum.setText(bike.getSaddle() + "");
+			rearSeatNum.setText(bike.getRearSeat() + "");
+			licensePlate.setText(bike.getLicensePlate());
+			if (bike instanceof StandardElectricalBike) {
+				bikeBattery.setText(((StandardElectricalBike) bike).getBattery() + "%");
+				bikeUsage.setText(((StandardElectricalBike) bike).getTimeLeft() + " minutes");
+			} else {
+				bikeBattery.setVisible(false);
+				bikeUsage.setVisible(false);
+				batteryImg.setVisible(false);
+			}
+		} catch (NullPointerException e) {
+			e.printStackTrace();
+		}
+	}
 
-    private void setImages() {
-        setImage(saddleImg, Path.SADDLE_ICON);
-        setImage(pedalsImg, Path.PEDALS_ICON);
-        setImage(rearSeatImg, Path.REAR_SEAT_ICON);
-        setImage(batteryImg, Path.BATTERY_ICON);
-        setImage(bikeImage, bike.getImageURL());
-    }
-    
-    public void toggleRentNowButton(boolean flag) {
-    	this.rentNowButton.setVisible(flag);
-    }
+	private void setImages() {
+		setImage(saddleImg, Path.SADDLE_ICON);
+		setImage(pedalsImg, Path.PEDALS_ICON);
+		setImage(rearSeatImg, Path.REAR_SEAT_ICON);
+		setImage(batteryImg, Path.BATTERY_ICON);
+		setImage(bikeImage, bike.getImageURL());
+	}
+
+	public void toggleRentNowButton(boolean flag) {
+		this.rentNowButton.setVisible(flag);
+	}
 }

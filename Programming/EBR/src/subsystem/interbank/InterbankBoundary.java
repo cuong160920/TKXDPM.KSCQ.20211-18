@@ -8,22 +8,23 @@ import utils.API;
  * Interbank to make transaction.
  * 
  * @author Nguyen Van Chien
- * <p>
- * created_at: 22/12/2021
- * <p>
- * project name: EBR
- * <p>
- * teacher's name: Dr. Nguyen Thi Thu Trang
- * <p>
- * class name: KSCQ.CNTT 01 K63
- * <p>
- * helpers: teacher's teaching assistants
+ *         <p>
+ *         created_at: 22/12/2021
+ *         <p>
+ *         project name: EBR
+ *         <p>
+ *         teacher's name: Dr. Nguyen Thi Thu Trang
+ *         <p>
+ *         class name: KSCQ.CNTT 01 K63
+ *         <p>
+ *         helpers: teacher's teaching assistants
  */
 public class InterbankBoundary {
 
 	/**
 	 * call API to make HTTP request
-	 * @param url {@link java.net.URL}
+	 * 
+	 * @param url  {@link java.net.URL}
 	 * @param data body of request
 	 * @return Http respond
 	 */

@@ -6,84 +6,85 @@ import model.payment.paymentCard.PaymentCard;
  * Model for credit card
  *
  * @author Nguyen Van Chien
- * <p>
- * created_at: 22/12/2021
- * <p>
- * project name: EBR
- * <p>
- * teacher's name: Dr. Nguyen Thi Thu Trang
- * <p>
- * class name: KSCQ.CNTT 01 K63
- * <p>
- * helpers: teacher's teaching assistants
+ *         <p>
+ *         created_at: 22/12/2021
+ *         <p>
+ *         project name: EBR
+ *         <p>
+ *         teacher's name: Dr. Nguyen Thi Thu Trang
+ *         <p>
+ *         class name: KSCQ.CNTT 01 K63
+ *         <p>
+ *         helpers: teacher's teaching assistants
  */
 public class CreditCard extends PaymentCard {
-    private String id;
-    private String cardNum;
-    private String cardOwner;
-    private int securityCode;
-    private String expDate;
+	private String id;
+	private String cardNum;
+	private String cardOwner;
+	private int securityCode;
+	private String expDate;
 
-    public CreditCard(String cardNum, String cardOwner, int securityCode, String expDate) {
-        this.cardNum = cardNum;
-        this.cardOwner = cardOwner;
-        this.securityCode = securityCode;
-        this.expDate = expDate;
-    }
+	public CreditCard(String cardNum, String cardOwner, int securityCode, String expDate) {
+		this.cardNum = cardNum;
+		this.cardOwner = cardOwner;
+		this.securityCode = securityCode;
+		this.expDate = expDate;
+	}
 
-    /**
-     * constructor use to create card from database's info
-     * @param id card's uuid
-     * @param cardNum card's number
-     * @param cardOwner card's owner/holder's name
-     * @param securityCode card's CVV code
-     * @param expDate card's expiration date
-     */
-    public CreditCard(String id, String cardNum, String cardOwner, int securityCode, String expDate) {
-        this.id = id;
-        this.cardNum = cardNum;
-        this.cardOwner = cardOwner;
-        this.securityCode = securityCode;
-        this.expDate = expDate;
-    }
+	/**
+	 * constructor use to create card from database's info
+	 * 
+	 * @param id           card's uuid
+	 * @param cardNum      card's number
+	 * @param cardOwner    card's owner/holder's name
+	 * @param securityCode card's CVV code
+	 * @param expDate      card's expiration date
+	 */
+	public CreditCard(String id, String cardNum, String cardOwner, int securityCode, String expDate) {
+		this.id = id;
+		this.cardNum = cardNum;
+		this.cardOwner = cardOwner;
+		this.securityCode = securityCode;
+		this.expDate = expDate;
+	}
 
-    public String getId() {
-        return id;
-    }
+	public String getId() {
+		return id;
+	}
 
-    public void setId(String id) {
-        this.id = id;
-    }
+	public void setId(String id) {
+		this.id = id;
+	}
 
-    public void setCardNum(String cardNum) {
-        this.cardNum = cardNum;
-    }
+	public void setCardNum(String cardNum) {
+		this.cardNum = cardNum;
+	}
 
-    public void setCardOwner(String cardOwner) {
-        this.cardOwner = cardOwner;
-    }
+	public void setCardOwner(String cardOwner) {
+		this.cardOwner = cardOwner;
+	}
 
-    public void setExpDate(String expDate) {
-        this.expDate = expDate;
-    }
+	public void setExpDate(String expDate) {
+		this.expDate = expDate;
+	}
 
-    public String getCardNum() {
-        return cardNum;
-    }
+	public String getCardNum() {
+		return cardNum;
+	}
 
-    public String getCardOwner() {
-        return cardOwner;
-    }
+	public String getCardOwner() {
+		return cardOwner;
+	}
 
-    public int getSecurityCode() {
-        return securityCode;
-    }
+	public int getSecurityCode() {
+		return securityCode;
+	}
 
-    public String getExpDate() {
-        return expDate;
-    }
+	public String getExpDate() {
+		return expDate;
+	}
 
-    public void setSecurityCode(int securityCode) {
-        this.securityCode = securityCode;
-    }
+	public void setSecurityCode(int securityCode) {
+		this.securityCode = securityCode;
+	}
 }

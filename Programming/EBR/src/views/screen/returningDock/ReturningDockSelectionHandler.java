@@ -31,14 +31,14 @@ import java.util.ResourceBundle;
  * Handler for dock displaying of Returning Dock Screen
  *
  * @author duykien
- * <p>
- * creted at: 15/12/2021
- * <p>
- * project name: EBR
- * <p>
- * teacher's name: Dr. Nguyen Thi Thu Trang
- * <p>
- * class name: CNTT02-K63
+ *         <p>
+ *         creted at: 15/12/2021
+ *         <p>
+ *         project name: EBR
+ *         <p>
+ *         teacher's name: Dr. Nguyen Thi Thu Trang
+ *         <p>
+ *         class name: CNTT02-K63
  */
 public class ReturningDockSelectionHandler extends BaseScreenHandler implements Initializable {
 

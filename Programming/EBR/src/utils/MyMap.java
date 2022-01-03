@@ -6,22 +6,20 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * The {@link MyMap JSON} class represents JSON objects.
- * To create a new JSON object,
- * JSON jsonObject = new JSON();
- * jsonObject.put("key", value);
+ * The {@link MyMap JSON} class represents JSON objects. To create a new JSON
+ * object, JSON jsonObject = new JSON(); jsonObject.put("key", value);
  * 
  * @author Nguyen Van Chien
- * <p>
- * created_at: 22/12/2021
- * <p>
- * project name: EBR
- * <p>
- * teacher's name: Dr. Nguyen Thi Thu Trang
- * <p>
- * class name: KSCQ.CNTT 01 K63
- * <p>
- * helpers: teacher's teaching assistants
+ *         <p>
+ *         created_at: 22/12/2021
+ *         <p>
+ *         project name: EBR
+ *         <p>
+ *         teacher's name: Dr. Nguyen Thi Thu Trang
+ *         <p>
+ *         class name: KSCQ.CNTT 01 K63
+ *         <p>
+ *         helpers: teacher's teaching assistants
  */
 public class MyMap extends LinkedHashMap<String, Object> {
 	private static final long serialVersionUID = 1L;
@@ -29,9 +27,7 @@ public class MyMap extends LinkedHashMap<String, Object> {
 	/**
 	 * Return a {@link String String} that represents the JSON object.
 	 * 
-	 * @author hieudm
-	 *         https://hg.openjdk.java.net/jdk8/jdk8/jdk/file/tip/src/share/classes/java/util/Hashtable.java
-	 * @return a {@link String String}.
+	 * @return a {@link String String} 
 	 */
 	public String toJSON() {
 		try {
@@ -62,15 +58,12 @@ public class MyMap extends LinkedHashMap<String, Object> {
 	}
 
 	/**
-	 * Return a {@link Map Map} that represents the mapping among
-	 * attribute names and their values of an object.
+	 * Return a {@link Map Map} that represents the mapping among attribute names
+	 * and their values of an object.
 	 * 
-	 * @author hieudm
-	 *         https://stackoverflow.com/questions/52406467/convert-object-to-map-in-java
 	 * @param obj - an arbitrary {@link Object Object}.
-	 * @return a {@link Map Map} mapping the attribute names and its
-	 *         values.
-	 * @throws IllegalAccessException unauthenticated access
+	 * @return a {@link Map Map} mapping the attribute names and its values.
+	 * @throws IllegalAccessException   unauthenticated access
 	 * @throws IllegalArgumentException invalid arguments
 	 */
 	public static Map<String, Object> toMyMap(Object obj) throws IllegalArgumentException, IllegalAccessException {
@@ -94,12 +87,11 @@ public class MyMap extends LinkedHashMap<String, Object> {
 	private static int offset = 0; // to trace the current index when calling a function
 
 	/**
-	 * Return a {@link String String} that represents the term in between
-	 * 2 double quote.
+	 * Return a {@link String String} that represents the term in between 2 double
+	 * quote.
 	 * 
-	 * @author hieudm
 	 * @param str {@link String String}
-	 * @param  idx the index of the open quote
+	 * @param idx the index of the open quote
 	 * @return the term as {@link String String}
 	 * @throws IllegalArgumentException invalid arguments
 	 */
@@ -126,12 +118,14 @@ public class MyMap extends LinkedHashMap<String, Object> {
 		offset = result.length() + 2; // update iterator with the term and the 2 double quotes
 		return sb.toString();
 	}
+
 	/**
-	 * Return a {@link MyMap MyMap} that represents the interested substring in a {@link String String}.
+	 * Return a {@link MyMap MyMap} that represents the interested substring in a
+	 * {@link String String}.
 	 * 
-	 * @author hieudm
 	 * @param str - {@link String String}
-	 * @param idx - the index of the first character in the interested substring in the {@link String String}
+	 * @param idx - the index of the first character in the interested substring in
+	 *            the {@link String String}
 	 * @return the term as {@link MyMap MyMap}
 	 * @throws IllegalArgumentException invalid arguments
 	 */
