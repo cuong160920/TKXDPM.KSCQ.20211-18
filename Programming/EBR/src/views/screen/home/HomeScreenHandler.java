@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import model.bike.Bike;
 import model.dock.Dock;
 import utils.Path;
 import utils.Utils;
@@ -42,109 +43,110 @@ import java.util.logging.Logger;
 
 public class HomeScreenHandler extends BaseScreenHandlerWithBarcodePopup implements Initializable {
 
-	public static Logger LOGGER = Utils.getLogger(HomeScreenHandler.class.getName());
+    public static Logger LOGGER = Utils.getLogger(HomeScreenHandler.class.getName());
 
-	@FXML
-	private Pane navbar;
+    @FXML
+    private Pane navbar;
 
-	@FXML
-	private ImageView searchImg;
+    @FXML
+    private ImageView searchImg;
 
-	@FXML
-	private TextField searchField;
+    @FXML
+    private TextField searchField;
 
-	@FXML
-	private VBox vboxDockList1;
+    @FXML
+    private VBox vboxDockList1;
 
-	@FXML
-	private VBox vboxDockList2;
+    @FXML
+    private VBox vboxDockList2;
+    
+    @FXML
+    private Button searchBtn;
 
-	@FXML
-	private Button searchBtn;
+    private ArrayList<Dock> dockList;
 
-	private ArrayList<Dock> dockList;
+    public HomeScreenHandler(Stage stage, String screenPath, HomeScreenController homeScreenController) throws IOException {
+        super(stage, screenPath);
+        super.screenTitle = "Home Screen";
+        super.setHomeScreenHandler(this);
+        super.setBController(homeScreenController);
+        dockList = this.getBController().getDockList();
+        navbar.getChildren().add(new NavBarHandler(this, true, false, false).getContent());
+        searchBtn.setOnMouseClicked(e -> {
+        	searchImgListener(e);
+        });
+    }
 
-	public HomeScreenHandler(Stage stage, String screenPath, HomeScreenController homeScreenController)
-			throws IOException {
-		super(stage, screenPath);
-		super.screenTitle = "Home Screen";
-		super.setHomeScreenHandler(this);
-		super.setBController(homeScreenController);
-		dockList = this.getBController().getDockList();
-		navbar.getChildren().add(new NavBarHandler(this, true, false, false).getContent());
-		searchBtn.setOnMouseClicked(e -> {
-			searchImgListener(e);
-		});
-	}
+    @Override
+    public HomeScreenController getBController() {
+        return (HomeScreenController) super.getBController();
+    }
 
-	@Override
-	public HomeScreenController getBController() {
-		return (HomeScreenController) super.getBController();
-	}
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        this.setImages();
+    }
 
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		this.setImages();
-	}
+    /**
+     * set image for home screen
+     */
+    private void setImages() {
+        setImage(searchImg, Path.SEARCH_ICON);
+    }
 
-	/**
-	 * set image for home screen
-	 */
-	private void setImages() {
-		setImage(searchImg, Path.SEARCH_ICON);
-	}
+    /**
+     * @author mHoang
+     * display list of docks in the home screen
+     */
+    public void displayDockList() {
+        vboxDockList1.getChildren().clear();
+        vboxDockList2.getChildren().clear();
+        try {
+            for (Dock dock : dockList) {
+                DockListItemHandler dockListItem = new DockListItemHandler(Path.DOCK_LIST_ITEM_PATH, this, dock);
+                if (dockList.indexOf(dock) % 2 == 0)
+                    vboxDockList1.getChildren().add(dockListItem.getContent());
+                else vboxDockList2.getChildren().add(dockListItem.getContent());
+                ArrayList<Bike> bikeList = (new DockScreenController()).getBikeListOfDock(dock.getId());
+                dock.clearBikeList();
+                dock.addListOfBikes(bikeList);
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+    }
 
-	/**
-	 * display list of docks in the home screen
-	 */
-	public void displayDockList() {
-		vboxDockList1.getChildren().clear();
-		vboxDockList2.getChildren().clear();
-		try {
-			for (Dock dock : dockList) {
-				DockListItemHandler dockListItem = new DockListItemHandler(Path.DOCK_LIST_ITEM_PATH, this, dock);
-				if (dockList.indexOf(dock) % 2 == 0)
-					vboxDockList1.getChildren().add(dockListItem.getContent());
-				else
-					vboxDockList2.getChildren().add(dockListItem.getContent());
+    /**
+     * move to dock that being clicked
+     * @param dock {@link Dock} dock to be shown
+     */
+    public void onDockListItemClicked(Dock dock) {
+        try {
+            DockScreenHandler dockScreenHandler = new DockScreenHandler(this.stage, Path.DOCK_PATH, dock);
+            dockScreenHandler.setBController(new DockScreenController());
+            dockScreenHandler.displayBikeList();
+            dockScreenHandler.setScreenTitle(dockScreenHandler.getScreenTitle());
+            dockScreenHandler.setHomeScreenHandler(this);
+            dockScreenHandler.setPreviousScreen(this);
+            dockScreenHandler.show();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+    }
 
-			}
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
-		} catch (NullPointerException e) {
-			e.printStackTrace();
-		}
-	}
 
-	/**
-	 * move to dock that being clicked
-	 * 
-	 * @param dock {@link Dock} dock to be shown
-	 */
-	public void onDockListItemClicked(Dock dock) {
-		try {
-			DockScreenHandler dockScreenHandler = new DockScreenHandler(this.stage, Path.DOCK_PATH, dock);
-			dockScreenHandler.setBController(new DockScreenController());
-			dockScreenHandler.displayBikeList();
-			dockScreenHandler.setScreenTitle(dockScreenHandler.getScreenTitle());
-			dockScreenHandler.setHomeScreenHandler(this);
-			dockScreenHandler.setPreviousScreen(this);
-			dockScreenHandler.show();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-	}
+    @FXML
+    void searchImgListener(MouseEvent e) {
+        System.out.println("clicked");
+        this.dockList = this.getBController().getDockListByKeyword(searchField.getText());
+        displayDockList();
+    }
 
-	@FXML
-	void searchImgListener(MouseEvent e) {
-		System.out.println("clicked");
-		this.dockList = this.getBController().getDockListByKeyword(searchField.getText());
-		displayDockList();
-	}
-
-	@Override
-	public void show() {
-		super.show();
-		displayDockList();
-	}
+    @Override
+    public void show() {
+        super.show();
+        displayDockList();
+    }
 }

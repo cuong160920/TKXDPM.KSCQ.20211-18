@@ -112,18 +112,22 @@ public class Utils {
 
 	public static DateTimeFormatter DATE_FORMATER_FOR_DISPLAY = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
+	public static DateTimeFormatter DATE_FORMATER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+	public static DateTimeFormatter DATE_FORMATER_FOR_DISPLAY = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+
 	/**
 	 * calculate duration in seconds
 	 *
 	 * @author mHoang
 	 * @param before start time
-	 * @param after  end time
+	 * @param after end time
 	 *
 	 * @return seconds Long
 	 */
 	public static long minusLocalDateTime(LocalDateTime before, LocalDateTime after) {
-		Duration duration = Duration.between(before, after);
-		return duration.toSeconds();
+			Duration duration = Duration.between(before, after);
+	return duration.toSeconds();
 	}
 
 }

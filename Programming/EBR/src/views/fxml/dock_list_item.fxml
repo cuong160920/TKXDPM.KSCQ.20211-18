@@ -15,7 +15,7 @@
    <children>
       <ImageView fx:id="dockImg" fitHeight="130.0" fitWidth="130.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="10.0">
          <image>
-            <Image url="@../../../assets/images/backButton.png" />
+            <Image url="@../../../assets/images/docks/dockImg1.png" />
          </image>
          <viewport>
             <Rectangle2D height="300.0" minX="100.0" minY="50.0" width="300.0" />
