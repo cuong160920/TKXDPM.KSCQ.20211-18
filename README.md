@@ -18,9 +18,9 @@
 - Xây dựng chương trình và kiểm thử
 
 ## Contribute
-- Nguyễn Văn Chiến: Thiết kế Model
-- Hoàng Hải Đăng:  Thiết kế Controller
-- Nguyễn Đào Duy Kiên:  Thiết kế 1 phần Views
+- Nguyễn Văn Chiến: Thiết kế phần thuê xe
+- Hoàng Hải Đăng:  Thiết kế phần xem xe
+- Nguyễn Đào Duy Kiên:  Thiết kế phần trả xe
 - Nguyễn Mạnh Cường: Testing
 
 ## Revisions
