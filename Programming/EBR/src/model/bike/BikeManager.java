@@ -100,6 +100,7 @@ public class BikeManager {
 					break;
 				}
 				if (bike != null) {
+					bike.setLicensePlate(resultSet.getString("license_plate"));
 					bikeList.add(bike);
 				}
 			}
