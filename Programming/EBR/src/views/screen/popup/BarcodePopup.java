@@ -80,7 +80,7 @@ public class BarcodePopup extends Popup implements Initializable {
 	/**
 	 * show the barcode popup
 	 * 
-	 * @param parentScreenHandler {@link HomeScreenHandler parentScreenHandler}
+	 * @param parentScreenHandler {@link BaseScreenHandlerWithBarcodePopup parentScreenHandler}
 	 * @throws IOException IO error
 	 */
 
